@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" 
+	android:id="@+id/layout">
+	
+    <TextView
+        android:id="@+id/Instructions"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="30dp"
+        android:paddingBottom="20dp"
+        android:textSize="15sp"
+        android:text="@string/subj_measure" />
+<LinearLayout
+	android:orientation="horizontal" 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content" 
+	android:layout_marginRight="20dp"
+	android:layout_marginLeft="20dp">
+    <ImageButton
+        android:id="@+id/anger"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:layout_margin="10dp"
+        android:src="@drawable/angry" 
+        android:background="@drawable/button_shape_selector"/>
+
+    <ImageButton
+        android:id="@+id/shame"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:layout_margin="10dp"
+        android:src="@drawable/shame" 
+        android:background="@drawable/button_shape_selector"/>
+
+    <ImageButton
+        android:id="@+id/sadness"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"  
+        android:scaleType="fitCenter"
+        android:layout_margin="10dp"
+        android:src="@drawable/sad" 
+        android:background="@drawable/button_shape_selector"/>
+    
+    
+</LinearLayout>
+
+<LinearLayout
+	android:orientation="horizontal" 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content" 
+	android:layout_marginLeft="20dp"
+	android:layout_marginRight="20dp">
+
+    <TextView
+        android:id="@+id/angertext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+                android:layout_weight="1"
+        android:gravity="center"
+        android:text="Angry" />
+    <TextView
+        android:id="@+id/shametetxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+                android:layout_weight="1"
+        android:gravity="center"
+        android:text="Ashamed" />
+    <TextView
+        android:id="@+id/sadnesstext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+                android:layout_weight="1"
+        android:gravity="center"
+        android:text="Sad" />
+    
+</LinearLayout>
+    <LinearLayout
+	android:orientation="horizontal" 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginLeft="20dp"
+	android:layout_marginRight="20dp" >
+    <ImageButton
+        android:id="@+id/happy"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/happy"
+        android:background="@drawable/toggle_shape_selector"/>
+    
+    <ImageButton
+        android:id="@+id/anxious"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/surprise"
+        android:background="@drawable/toggle_shape_selector" />
+        
+    <ImageButton
+        android:id="@+id/calm"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/calm" 
+        android:background="@drawable/toggle_shape_selector"/>
+</LinearLayout>
+    <LinearLayout
+	android:orientation="horizontal" 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content" 
+	android:layout_marginLeft="20dp"
+	android:layout_marginRight="20dp">
+
+    <TextView
+        android:id="@+id/happytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Happy" />
+    <TextView
+        android:id="@+id/anxioustext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Anxious" />
+    <TextView
+        android:id="@+id/calmtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Calm" />
+    
+</LinearLayout>
+
+    
+</LinearLayout>
