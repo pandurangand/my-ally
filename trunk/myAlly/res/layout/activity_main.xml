@@ -15,6 +15,18 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="171dp"
+        android:background="@drawable/button_shape_selector"
         android:text="Measure" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/button_shape_selector"
+        
+        android:text="Start Activity" />
 
 </RelativeLayout>

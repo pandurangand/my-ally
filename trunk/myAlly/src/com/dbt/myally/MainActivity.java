@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		Button heartrate_button = (Button) findViewById(R.id.heart_rate);
+		Button start_button = (Button) findViewById(R.id.start);
 		
 		heartrate_button.setOnClickListener(new View.OnClickListener() {			
 			@Override
@@ -23,6 +24,16 @@ public class MainActivity extends Activity {
     			startActivity(i);
 			}
 		});
+		
+		
+		start_button.setOnClickListener(new View.OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(MainActivity.this, SubjectiveMeasureActivity.class);
+    			startActivity(i);
+			}
+		});
+		
 	}
 
 	@Override
