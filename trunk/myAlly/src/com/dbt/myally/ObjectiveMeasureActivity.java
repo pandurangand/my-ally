@@ -4,12 +4,11 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.dbt.myally.InfoDb.ActivityEntry;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.hardware.Camera;
 import android.hardware.Camera.PreviewCallback;
 import android.os.Bundle;
@@ -20,6 +19,8 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.dbt.myally.InfoDb.ActivityEntry;
 
 
 /**
@@ -78,6 +79,9 @@ public class ObjectiveMeasureActivity extends Activity {
         image = (ImageView) findViewById(R.id.heart);
         text = (TextView) findViewById(R.id.text);
 
+        //Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/PiecesofEight.ttf");
+        //text.setTypeface(tf);
+        
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "DoNotDimScreen");
         

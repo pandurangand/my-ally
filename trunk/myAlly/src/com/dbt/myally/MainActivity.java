@@ -5,7 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
+
+import com.beardedhen.androidbootstrap.BootstrapButton;
 
 public class MainActivity extends Activity {
 
@@ -14,9 +15,10 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Button heartrate_button = (Button) findViewById(R.id.heart_rate);
-		Button start_button = (Button) findViewById(R.id.start);
-		
+		BootstrapButton heartrate_button = (BootstrapButton) findViewById(R.id.heart_rate);
+		BootstrapButton start_button = (BootstrapButton) findViewById(R.id.start);
+		BootstrapButton earth_button = (BootstrapButton) findViewById(R.id.earth);
+
 		heartrate_button.setOnClickListener(new View.OnClickListener() {			
 			@Override
 			public void onClick(View v) {
@@ -31,6 +33,17 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				Intent i = new Intent(MainActivity.this, SubjectiveMeasureActivity.class);
     			startActivity(i);
+			}
+		});
+		
+		earth_button.setOnClickListener(new View.OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(MainActivity.this, EarthActivity.class);
+    			startActivity(i);
+				
+				
+		        
 			}
 		});
 		
