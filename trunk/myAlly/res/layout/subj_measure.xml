@@ -24,8 +24,8 @@
             android:paddingTop="60dp"
             android:text="@string/subj_measure"
             android:textColor="@color/White"
-            android:textStyle="bold"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textStyle="italic"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <LinearLayout
             android:layout_width="fill_parent"
