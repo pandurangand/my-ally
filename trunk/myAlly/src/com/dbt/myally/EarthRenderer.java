@@ -48,7 +48,7 @@ public class EarthRenderer extends RajawaliRenderer {
 
 	public void onDrawFrame(GL10 glUnused) {
 		super.onDrawFrame(glUnused);
-		mSphere.setRotY(mSphere.getRotY() + 1);
+		mSphere.setRotY(mSphere.getRotY() + 0.2);
 	}
 	
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
