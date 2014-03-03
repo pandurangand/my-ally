@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Typeface;
 import android.hardware.Camera;
 import android.hardware.Camera.PreviewCallback;
 import android.os.Bundle;
@@ -97,10 +96,12 @@ public class ObjectiveMeasureActivity extends Activity {
  				} else {
  					b.putString(ActivityEntry.COLUMN_PRE_HR, hr);
  				}
- 				Intent i = new Intent(ObjectiveMeasureActivity.this, HeartRateMonitor.class);
- 				i.putExtras(b);
-    			startActivity(i);
+ 				//Intent i = new Intent(ObjectiveMeasureActivity.this, HeartRateMonitor.class);
+ 				Intent intent = new Intent(ObjectiveMeasureActivity.this, BreathingActivity.class);
+ 				intent.putExtras(b);
+    			startActivity(intent);
 
+    			// TBD: Verify if needed?
  				runOnUiThread(new Runnable() {
 
  					@Override

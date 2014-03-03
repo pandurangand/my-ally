@@ -9,4 +9,12 @@
     <string name="obj_instruction">Let\'s measure your heart rate now! Please put your finger on the camera lens</string>
     <string name="angry">Angry</string>
 
+    <!-- Temporary String -->
+    <string name="quote">\"Our greatest glory consists not in never failing, but in rising every time we fall.\" - Oliver Goldsmith</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_crisis">Crisis</string>
+    <string name="cd_homework">Homework</string>
+    <string name="cd_community">Community</string>
+
 </resources>

@@ -1,42 +1,120 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
-	xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context=".MainActivity" >
-    
 
-    <Button
-        android:id="@+id/start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"      
-        android:text="Start Activity" />
+    <LinearLayout
+        android:id="@+id/TopLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75"
+        android:background="@color/PrimaryA"
+        android:gravity="center"
+        android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/heart_rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/start"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:text="Measure" >
-    </Button>
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="@string/quote"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/GhostWhite"
+            android:textStyle="italic" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/earth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/heart_rate"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"        
-        android:text="Earth" />
-    
-</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/BottomLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25"
+        android:background="@color/PrimaryB"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/button_crisis"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/circle_button"
+                android:contentDescription="@string/cd_crisis"
+                android:onClick="launchCrisis"
+                android:src="@drawable/crisis" >
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/textView_crisis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/cd_crisis" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/button_homework"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/circle_button"
+                android:contentDescription="@string/cd_homework"
+                android:onClick="launchHomework"
+                android:src="@drawable/homework" >
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/textView_homework"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/cd_homework" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/button_community"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/circle_button"
+                android:contentDescription="@string/cd_community"
+                android:src="@drawable/community"
+                android:onClick="launchCommunity" >
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/textView_community"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/cd_community" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
