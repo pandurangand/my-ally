@@ -1,43 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
-xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
-	android:orientation="vertical" 
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent" 
-	android:id="@+id/objlayout">
-	<LinearLayout android:id="@+id/objtop"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:orientation="vertical" 
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+    xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/objlayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-		<TextView
-		    android:id="@+id/obj_instruc"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:layout_marginTop="30dp"
-		    android:layout_marginBottom="40dp"
-		    android:gravity="center"
-		    android:text="@string/obj_instruction" />
+    <LinearLayout
+        android:id="@+id/TopLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75"
+        android:background="@color/PrimaryA"
+        android:orientation="vertical" >
 
-        <TextView android:id="@+id/text"
-            android:text="@string/default_text"
-            android:textSize="70sp"
+        <LinearLayout
+            android:id="@+id/objtop"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">        
-        </TextView>
-        
-	        <ImageView 
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:id="@+id/heart"/>
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
+
+            <TextView
+                android:id="@+id/obj_instruc"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="@string/obj_instruction"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/White"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/default_text"
+                android:textSize="70sp" >
+            </TextView>
+
+            <ImageView
+                android:id="@+id/heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <SurfaceView
+            android:id="@+id/preview"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:visible="false" >
+        </SurfaceView>
     </LinearLayout>
-	<SurfaceView android:id="@+id/preview"
-		android:layout_width="10dp"
-		android:layout_height="10dp"
-        android:visible="false">
-	</SurfaceView>
+
+    <LinearLayout
+        android:id="@+id/BottomLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25"
+        android:background="@color/PrimaryB"
+        android:gravity="center"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
 </LinearLayout>
