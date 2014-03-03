@@ -1,145 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
-xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
-	android:orientation="vertical" 
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent" 
-	android:id="@+id/layout">
+    xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/Instructions"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:id="@+id/TopLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75"
+        android:background="@color/PrimaryA"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/Instructions"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20dp"
+            android:paddingTop="60dp"
+            android:text="@string/subj_measure"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/anger"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/angry" />
+
+            <ImageButton
+                android:id="@+id/shame"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/shame" />
+
+            <ImageButton
+                android:id="@+id/sadness"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sad" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/angertext"
+                style="@style/CodeFont"
+                android:layout_weight="1"
+                android:text="@string/angry" />
+
+            <TextView
+                android:id="@+id/shametetxt"
+                style="@style/CodeFont"
+                android:layout_weight="1"
+                android:text="Ashamed" />
+
+            <TextView
+                android:id="@+id/sadnesstext"
+                style="@style/CodeFont"
+                android:layout_weight="1"
+                android:text="Sad" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/happy"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/happy" />
+
+            <ImageButton
+                android:id="@+id/anxious"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/surprise" />
+
+            <ImageButton
+                android:id="@+id/calm"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/calm" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/happytext"
+                style="@style/CodeFont"
+                android:layout_weight="1"
+                android:text="Happy" />
+
+            <TextView
+                android:id="@+id/anxioustext"
+                style="@style/CodeFont"
+                android:layout_weight="1"
+                android:text="Anxious" />
+
+            <TextView
+                android:id="@+id/calmtext"
+                style="@style/CodeFont"
+                android:layout_weight="1"
+                android:text="Calm" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/BottomLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25"
+        android:background="@color/PrimaryB"
         android:gravity="center"
-        android:paddingTop="60dp"
-        android:paddingBottom="20dp"
-        android:textSize="15sp"
-        android:text="@string/subj_measure" />
-<LinearLayout
-	android:orientation="horizontal" 
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content" 
-	android:layout_marginRight="20dp"
-	android:layout_marginLeft="20dp">
-    <ImageButton
-        android:id="@+id/anger"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:scaleType="fitCenter"
-        android:layout_margin="10dp"
-        android:src="@drawable/angry" 
-        android:background="@drawable/button_shape_selector"/>
+        android:orientation="horizontal" >
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/shame"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:scaleType="fitCenter"
-        android:layout_margin="10dp"
-        android:src="@drawable/shame" 
-        android:background="@drawable/button_shape_selector"/>
-
-    <ImageButton
-        android:id="@+id/sadness"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"  
-        android:scaleType="fitCenter"
-        android:layout_margin="10dp"
-        android:src="@drawable/sad" 
-        android:background="@drawable/button_shape_selector"/>
-    
-    
-</LinearLayout>
-
-<LinearLayout
-	android:orientation="horizontal" 
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content" 
-	android:layout_marginLeft="20dp"
-	android:layout_marginRight="20dp">
-
-    <TextView
-        style="@style/CodeFont"
-        android:id="@+id/angertext"
-        android:layout_weight="1"
-        android:text="@string/angry" />
-    <TextView
-        style="@style/CodeFont"
-        android:id="@+id/shametetxt"
-		android:layout_weight="1"
-        android:text="Ashamed" />
-    <TextView
-        style="@style/CodeFont"
-        android:id="@+id/sadnesstext"
-        android:layout_weight="1"
-        android:text="Sad" />
-    
-</LinearLayout>
-    <LinearLayout
-	android:orientation="horizontal" 
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:layout_marginLeft="20dp"
-	android:layout_marginRight="20dp" >
-    <ImageButton
-        android:id="@+id/happy"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:layout_margin="10dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/happy"
-        android:background="@drawable/toggle_shape_selector"/>
-    
-    <ImageButton
-        android:id="@+id/anxious"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:layout_margin="10dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/surprise"
-        android:background="@drawable/toggle_shape_selector" />
-        
-    <ImageButton
-        android:id="@+id/calm"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:layout_margin="10dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/calm" 
-        android:background="@drawable/toggle_shape_selector"/>
-</LinearLayout>
-    <LinearLayout
-	android:orientation="horizontal" 
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content" 
-	android:layout_marginLeft="20dp"
-	android:layout_marginRight="20dp">
-
-    <TextView
-        style="@style/CodeFont"
-        android:id="@+id/happytext"
-        android:layout_weight="1"
-        android:text="Happy" />
-    <TextView
-        style="@style/CodeFont"
-        android:id="@+id/anxioustext"
-        android:layout_weight="1"
-        android:text="Anxious" />
-    <TextView
-        style="@style/CodeFont"
-        android:id="@+id/calmtext"
-        android:layout_weight="1"
-        android:text="Calm" />
-    
-</LinearLayout>
-
-    
 </LinearLayout>

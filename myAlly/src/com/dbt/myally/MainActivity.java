@@ -62,7 +62,8 @@ public class MainActivity extends Activity {
 	}
 	
 	public void launchHomework(View view) {
-		//TBD
+		Intent intent = new Intent(MainActivity.this, BreathingActivity.class);
+		startActivity(intent);
 	}
 	
 	public void launchCommunity(View view) {
