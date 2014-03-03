@@ -1,4 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+	xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,26 +9,43 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
+    
 
-    <Button
-        android:id="@+id/heart_rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="171dp"
-        android:background="@drawable/button_shape_selector"
-        android:text="Measure" />
-
-    <Button
+    <com.beardedhen.androidbootstrap.BootstrapButton
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
-        android:background="@drawable/button_shape_selector"
-        
+		bootstrapbutton:bb_icon_right="fa-android"
+                bootstrapbutton:bb_roundedCorners="true"
+                bootstrapbutton:bb_type="success"         
         android:text="Start Activity" />
 
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/heart_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:text="Measure"
+        fontawesometext:bb_icon_right="fa-android"
+        fontawesometext:bb_roundedCorners="true"
+        fontawesometext:bb_type="danger" >
+    </com.beardedhen.androidbootstrap.BootstrapButton>
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/earth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heart_rate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+		bootstrapbutton:bb_icon_right="fa-android"
+                bootstrapbutton:bb_roundedCorners="true"
+                bootstrapbutton:bb_type="info"         
+        android:text="Earth" />
+    
 </RelativeLayout>

@@ -6,5 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="default_text">--</string>
     <string name="subj_measure">How are you feeling right now?</string>
+    <string name="obj_instruction">Let\'s measure your heart rate now! Please put your finger on the camera lens</string>
+    <string name="angry">Angry</string>
 
 </resources>
