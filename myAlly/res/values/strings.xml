@@ -9,6 +9,8 @@
     <string name="obj_instruction">Let\'s measure your heart rate now! Please put your finger on the camera lens</string>
     <string name="angry">Angry</string>
 
+    <string name="hr_desc">Your current heart rate:</string>
+    
     <!-- Temporary String -->
     <string name="quote">\"Our greatest glory consists not in never failing, but in rising every time we fall.\" - Oliver Goldsmith</string>
 
