@@ -16,8 +16,8 @@
     <scale
         android:duration="6000"
         android:fillAfter="false"
-        android:fromXScale="2.5"
-        android:fromYScale="2.5"
+        android:fromXScale="2.6"
+        android:fromYScale="2.6"
         android:interpolator="@android:anim/accelerate_decelerate_interpolator"
         android:pivotX="50%"
         android:pivotY="50%"
