@@ -57,8 +57,8 @@
 
         <SurfaceView
             android:id="@+id/surfaceView"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
             android:layout_gravity="bottom|center"
             android:visible="false" >
         </SurfaceView>
