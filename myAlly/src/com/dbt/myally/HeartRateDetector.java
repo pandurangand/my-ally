@@ -10,7 +10,6 @@ import android.os.PowerManager.WakeLock;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
 
 public class HeartRateDetector {
 	private static final String TAG = "HeartRateDetector";
