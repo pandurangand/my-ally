@@ -14,13 +14,13 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textViewHRInfo"
+            android:id="@+id/textView_HRInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hr_desc" />
 
         <TextView
-            android:id="@+id/textViewHR"
+            android:id="@+id/textView_HR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="" />
@@ -49,16 +49,16 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textView_breath"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Breath In"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <SurfaceView
             android:id="@+id/surfaceView"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
             android:layout_gravity="bottom|center"
             android:visible="false" >
         </SurfaceView>
