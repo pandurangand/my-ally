@@ -90,14 +90,18 @@ public class ObjectiveMeasureActivity extends Activity {
 
  			@Override
  			public void run() {
+ 				Intent intent;
  				String hr = text.getText().toString();
  				if (b.containsKey(ActivityEntry.COLUMN_POST_MOOD)) {
  					b.putString(ActivityEntry.COLUMN_POST_HR, hr);
+ 					intent = new Intent(ObjectiveMeasureActivity.this, MainActivity.class);
+ 	 				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
  				} else {
  					b.putString(ActivityEntry.COLUMN_PRE_HR, hr);
+ 					intent = new Intent(ObjectiveMeasureActivity.this, BreathingActivity.class);
+ 	 				
  				}
  				//Intent i = new Intent(ObjectiveMeasureActivity.this, HeartRateMonitor.class);
- 				Intent intent = new Intent(ObjectiveMeasureActivity.this, BreathingActivity.class);
  				intent.putExtras(b);
     			startActivity(intent);
 

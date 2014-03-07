@@ -45,37 +45,37 @@ public class SubjectiveMeasureActivity extends Activity implements OnClickListen
     	//Bundle b = new Bundle();
     	switch(v.getId()) {
     	case R.id.anger:
-            if (b != null)
+            if (!b.isEmpty())
     			b.putString(ActivityEntry.COLUMN_POST_MOOD, "anger");
     		else
     			b.putString(ActivityEntry.COLUMN_PRE_MOOD, "anger");
     		break;
     	case R.id.shame:
-            if (b != null)
+            if (!b.isEmpty())
     			b.putString(ActivityEntry.COLUMN_POST_MOOD, "shame");
     		else
     			b.putString(ActivityEntry.COLUMN_PRE_MOOD, "shame");
     		break;
     	case R.id.sadness:
-            if (b != null)
+            if (!b.isEmpty())
     			b.putString(ActivityEntry.COLUMN_POST_MOOD, "sad");
     		else
     			b.putString(ActivityEntry.COLUMN_PRE_MOOD, "sad");
     		break;
     	case R.id.happy:
-            if (b != null)
+            if (!b.isEmpty())
     			b.putString(ActivityEntry.COLUMN_POST_MOOD, "happy");
     		else
     			b.putString(ActivityEntry.COLUMN_PRE_MOOD, "happy");
     		break;
     	case R.id.anxious:
-            if (b != null)
+            if (!b.isEmpty())
     			b.putString(ActivityEntry.COLUMN_POST_MOOD, "anxious");
     		else
     			b.putString(ActivityEntry.COLUMN_PRE_MOOD, "anxious");
     		break;
     	case R.id.calm:
-            if (b != null)
+            if (!b.isEmpty())
     			b.putString(ActivityEntry.COLUMN_POST_MOOD, "calm");
     		else
     			b.putString(ActivityEntry.COLUMN_PRE_MOOD, "calm");

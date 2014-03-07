@@ -69,7 +69,7 @@
         android:layout_weight="0.25"
         android:background="@color/PrimaryB"
         android:gravity="center"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/textView_breath"
@@ -77,6 +77,15 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <Button
+            android:id="@+id/done_breathing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle_button"
+            android:onClick="doneBreath"
+            android:text="Done" />
+
     </LinearLayout>
 
 </LinearLayout>
