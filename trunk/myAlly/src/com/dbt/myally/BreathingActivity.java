@@ -2,41 +2,49 @@ package com.dbt.myally;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.view.SurfaceView;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BreathingActivity extends Activity {
 	private HeartRateDetector _hrDetector;
-	
+
 	private Handler _handler = null;
 	private TextView _textViewBreath = null;
-	
+
 	private boolean _breathIn = true;
-	
+	private Bundle _info;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_breathing);
-		
-		_hrDetector = new HeartRateDetector((PowerManager) getSystemService(Context.POWER_SERVICE), 
+
+		_info = this.getIntent().getExtras();
+
+		_hrDetector = new HeartRateDetector(
+				(PowerManager) getSystemService(Context.POWER_SERVICE),
 				(SurfaceView) findViewById(R.id.surfaceView));
 		_hrDetector.init();
 
 		ImageView image = (ImageView) findViewById(R.id.balloon);
-		Animation hyperspaceJump = AnimationUtils.loadAnimation(this, R.anim.animation_breathing);
+		Animation hyperspaceJump = AnimationUtils.loadAnimation(this,
+				R.anim.animation_breathing);
 		image.startAnimation(hyperspaceJump);
 
-		
 		_textViewBreath = (TextView) findViewById(R.id.textView_breath);
 		_handler = new Handler();
-		
-		//TBD: Find a better way to update heart rate (perhaps with a listener interface?)
+
+		// TBD: Find a better way to update heart rate (perhaps with a listener
+		// interface?)
 		final TextView heartRate = (TextView) findViewById(R.id.textView_HR);
 		Thread t = new Thread() {
 
@@ -48,7 +56,8 @@ public class BreathingActivity extends Activity {
 						runOnUiThread(new Runnable() {
 							@Override
 							public void run() {
-								heartRate.setText("" + _hrDetector.getHeartRate());
+								heartRate.setText(""
+										+ _hrDetector.getHeartRate());
 							}
 						});
 					}
@@ -81,18 +90,32 @@ public class BreathingActivity extends Activity {
 		_handler.removeCallbacks(_updateTimeTask);
 		_hrDetector.pause();
 	}
-	
+
 	private Runnable _updateTimeTask = new Runnable() {
-		   public void run() {
-			   if(_breathIn) { 
-				   _textViewBreath.setText("Breathe In");
-			   } else {
-				   _textViewBreath.setText("Breathe Out");
-				   
-			   }
-			   
-			   _breathIn = !_breathIn;
-		       _handler.postDelayed(this, 3000);
-		   }
-		};
+		public void run() {
+			if (_breathIn) {
+				_textViewBreath.setText("Breathe In");
+			} else {
+				_textViewBreath.setText("Breathe Out");
+
+			}
+
+			_breathIn = !_breathIn;
+			_handler.postDelayed(this, 3000);
+		}
+	};
+
+	public void doneBreath(View view) {
+		// Intent intent = new Intent(MainActivity.this,
+		// BreathingActivity.class);
+		if (_info != null) {
+			Intent intent = new Intent(BreathingActivity.this,
+					SubjectiveMeasureActivity.class);
+
+			intent.putExtras(_info);
+			startActivity(intent);
+		} else {
+			finish();
+		}
+	}
 }
