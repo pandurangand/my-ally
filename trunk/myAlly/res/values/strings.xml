@@ -19,5 +19,19 @@
     <string name="cd_homework">Homework</string>
     <string name="cd_community">Community</string>
     <string name="cd_balloon">Breathing Balloon</string>
+    <string-array name="quotes">
+        <item>\"Our greatest glory consists not in never failing, but in rising every time we fall.\" - Oliver Goldsmith</item>
+        <item>\"The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.\" - Helen Keller</item>
+        <item>\"It is during our darkest moments that we must focus to see the light.\" - Aristotle</item>
+        <item>\"Find a place inside where there\'s joy, and the joy will burn out the pain.\" - Joseph Campbell</item>
+        <item>\"Don\'t judge each day by the harvest you reap but by the seeds that you plant.\" - Robert Louis Stevenson</item>
+        <item>\"Nothing is impossible, the word itself says \'I\'m possible\'!\" - Audrey Hepburn</item>
+        <item>\"Happiness is not something you postpone for the future; it is something you design for the present.\" - Jim Rohn</item>
+        <item>\"Happiness resides not in possessions, and not in gold, happiness dwells in the soul.\" - Democritus</item>
+        <item>\"Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.\" - Buddha</item>
+        <item>\"Your present circumstances don\'t determine where you go; they merely determine where you start.\" - Nido Qubein</item>
+        <item>\"Change your thoughts and you change your world.\" - Norman Vincent Peale</item>
+        <item>\"We can\'t help everyone, but everyone can help someone.\" - Ronald Reagan</item>
+    </string-array>
 
 </resources>

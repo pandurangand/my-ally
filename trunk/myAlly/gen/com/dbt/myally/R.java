@@ -11,6 +11,9 @@ public final class R {
     public static final class anim {
         public static final int animation_breathing=0x7f040000;
     }
+    public static final class array {
+        public static final int quotes=0x7f090000;
+    }
     public static final class attr {
     }
     public static final class color {
@@ -202,45 +205,45 @@ public final class R {
         public static final int shame=0x7f020012;
     }
     public static final class id {
-        public static final int BottomLinearLayout=0x7f0b0005;
-        public static final int Instructions=0x7f0b0019;
-        public static final int TopLinearLayout=0x7f0b0000;
-        public static final int action_settings=0x7f0b0026;
-        public static final int anger=0x7f0b001a;
-        public static final int angertext=0x7f0b001d;
-        public static final int anxious=0x7f0b0021;
-        public static final int anxioustext=0x7f0b0024;
-        public static final int balloon=0x7f0b0003;
-        public static final int button_community=0x7f0b000d;
-        public static final int button_crisis=0x7f0b0009;
-        public static final int button_homework=0x7f0b000b;
-        public static final int calm=0x7f0b0022;
-        public static final int calmtext=0x7f0b0025;
-        public static final int done_breathing=0x7f0b0007;
-        public static final int fragment_container=0x7f0b000f;
-        public static final int happy=0x7f0b0020;
-        public static final int happytext=0x7f0b0023;
-        public static final int heart=0x7f0b0018;
-        public static final int image=0x7f0b0013;
-        public static final int layout=0x7f0b0010;
-        public static final int obj_instruc=0x7f0b0017;
-        public static final int objlayout=0x7f0b0015;
-        public static final int objtop=0x7f0b0016;
-        public static final int preview=0x7f0b0014;
-        public static final int sadness=0x7f0b001c;
-        public static final int sadnesstext=0x7f0b001f;
-        public static final int shame=0x7f0b001b;
-        public static final int shametetxt=0x7f0b001e;
-        public static final int surfaceView=0x7f0b0004;
-        public static final int text=0x7f0b0012;
-        public static final int textView1=0x7f0b0008;
-        public static final int textView_HR=0x7f0b0002;
-        public static final int textView_HRInfo=0x7f0b0001;
-        public static final int textView_breath=0x7f0b0006;
-        public static final int textView_community=0x7f0b000e;
-        public static final int textView_crisis=0x7f0b000a;
-        public static final int textView_homework=0x7f0b000c;
-        public static final int top=0x7f0b0011;
+        public static final int BottomLinearLayout=0x7f0c0005;
+        public static final int Instructions=0x7f0c0019;
+        public static final int TopLinearLayout=0x7f0c0000;
+        public static final int action_settings=0x7f0c0026;
+        public static final int anger=0x7f0c001a;
+        public static final int angertext=0x7f0c001d;
+        public static final int anxious=0x7f0c0021;
+        public static final int anxioustext=0x7f0c0024;
+        public static final int balloon=0x7f0c0003;
+        public static final int button_community=0x7f0c000d;
+        public static final int button_crisis=0x7f0c0009;
+        public static final int button_homework=0x7f0c000b;
+        public static final int calm=0x7f0c0022;
+        public static final int calmtext=0x7f0c0025;
+        public static final int done_breathing=0x7f0c0007;
+        public static final int fragment_container=0x7f0c000f;
+        public static final int happy=0x7f0c0020;
+        public static final int happytext=0x7f0c0023;
+        public static final int heart=0x7f0c0018;
+        public static final int image=0x7f0c0013;
+        public static final int layout=0x7f0c0010;
+        public static final int obj_instruc=0x7f0c0017;
+        public static final int objlayout=0x7f0c0015;
+        public static final int objtop=0x7f0c0016;
+        public static final int preview=0x7f0c0014;
+        public static final int quote_text=0x7f0c0008;
+        public static final int sadness=0x7f0c001c;
+        public static final int sadnesstext=0x7f0c001f;
+        public static final int shame=0x7f0c001b;
+        public static final int shametetxt=0x7f0c001e;
+        public static final int surfaceView=0x7f0c0004;
+        public static final int text=0x7f0c0012;
+        public static final int textView_HR=0x7f0c0002;
+        public static final int textView_HRInfo=0x7f0c0001;
+        public static final int textView_breath=0x7f0c0006;
+        public static final int textView_community=0x7f0c000e;
+        public static final int textView_crisis=0x7f0c000a;
+        public static final int textView_homework=0x7f0c000c;
+        public static final int top=0x7f0c0011;
     }
     public static final class layout {
         public static final int activity_breathing=0x7f030000;
@@ -251,7 +254,7 @@ public final class R {
         public static final int subj_measure=0x7f030005;
     }
     public static final class menu {
-        public static final int main=0x7f0a0000;
+        public static final int main=0x7f0b0000;
     }
     public static final class raw {
         public static final int blur_fragment_shader=0x7f050000;
@@ -302,11 +305,11 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f090000;
+        public static final int AppBaseTheme=0x7f0a0000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f090001;
-        public static final int CodeFont=0x7f090002;
+        public static final int AppTheme=0x7f0a0001;
+        public static final int CodeFont=0x7f0a0002;
     }
 }

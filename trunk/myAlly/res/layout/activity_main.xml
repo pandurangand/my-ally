@@ -12,18 +12,15 @@
         android:layout_weight="0.75"
         android:background="@color/PrimaryA"
         android:gravity="center"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="center"
-            android:text="@string/quote"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/GhostWhite"
-            android:textStyle="italic" />
+        <TextSwitcher
+            android:id="@+id/quote_text"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
     </LinearLayout>
 
     <LinearLayout
