@@ -195,14 +195,19 @@ public final class R {
         public static final int circle_button=0x7f020008;
         public static final int community=0x7f020009;
         public static final int crisis=0x7f02000a;
-        public static final int earthtruecolor_nasa_big=0x7f02000b;
-        public static final int happy=0x7f02000c;
-        public static final int heart_off=0x7f02000d;
-        public static final int heart_on=0x7f02000e;
-        public static final int homework=0x7f02000f;
-        public static final int ic_launcher=0x7f020010;
-        public static final int sad=0x7f020011;
-        public static final int shame=0x7f020012;
+        public static final int earth_texture=0x7f02000b;
+        public static final int earthtruecolor_nasa_big=0x7f02000c;
+        public static final int happy=0x7f02000d;
+        public static final int heart_off=0x7f02000e;
+        public static final int heart_on=0x7f02000f;
+        public static final int homework=0x7f020010;
+        public static final int ic_launcher=0x7f020011;
+        public static final int sad=0x7f020012;
+        public static final int shame=0x7f020013;
+        public static final int sphere=0x7f020014;
+        public static final int sphere2=0x7f020015;
+        public static final int sphere4=0x7f020016;
+        public static final int sphereblue=0x7f020017;
     }
     public static final class id {
         public static final int BottomLinearLayout=0x7f0c0005;
