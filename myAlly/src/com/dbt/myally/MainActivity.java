@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void launchHomework(View view) {
-		Intent intent = new Intent(MainActivity.this, BreathingActivity.class);
+		Intent intent = new Intent(MainActivity.this, HomeworkActivity.class);
 		startActivity(intent);
 	}
 	
