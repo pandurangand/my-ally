@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,7 +27,8 @@ public class TensionActivity extends Activity {
 	Handler mHandler = new Handler();
 	TextView countdown;
 	Iterator<bodyPart> it;
-
+	ImageView balloon;
+	Animation breathing;
 	private enum bodyPart {
 		HEAD, SHOULDER, STOMACH, HAND, LEG, FEET
 	};
@@ -35,6 +38,9 @@ public class TensionActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tension);
 		_info = this.getIntent().getExtras();
+		balloon = (ImageView) findViewById(R.id.balloon);
+		breathing = AnimationUtils.loadAnimation(this,
+				R.anim.animation_breathing);
 
 		final List<bodyPart> bp = new ArrayList<bodyPart>();
 
@@ -72,7 +78,9 @@ public class TensionActivity extends Activity {
 
 	private void clenchActivity(final bodyPart part) {
 		CountDownTimer timer = null;
-		
+		balloon.setVisibility(View.VISIBLE);
+		balloon.startAnimation(breathing);
+
 		timer = new CountDownTimer(5100, 1000) {
 			int secondsLeft = 5;
 			int count = 0;
@@ -127,6 +135,7 @@ public class TensionActivity extends Activity {
 							start();
 						} else {
 							cancel();
+							balloon.clearAnimation();
 							dialog(part);
 
 						}

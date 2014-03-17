@@ -12,7 +12,15 @@
         android:layout_weight="0.75"
         android:background="@color/PrimaryA"
         android:orientation="vertical" >
-
+<ImageView
+                android:id="@+id/balloon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:padding="12dp"
+                android:contentDescription="@string/cd_balloon"
+                android:visibility="invisible"
+                android:src="@drawable/balloon" />
         <FrameLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" >

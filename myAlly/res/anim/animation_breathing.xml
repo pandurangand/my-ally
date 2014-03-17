@@ -1,7 +1,7 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:shareInterpolator="false" >
     <scale
-        android:duration="6000"
+        android:duration="10000"
         android:fillAfter="false"
         android:fromXScale="2.5"
         android:fromYScale="2.5"
@@ -12,7 +12,7 @@
         android:toXScale="0.25"
         android:toYScale="0.25" />
     <scale
-        android:duration="6000"
+        android:duration="10000"
         android:fillAfter="false"
         android:fromXScale="0.25"
         android:fromYScale="0.25"
