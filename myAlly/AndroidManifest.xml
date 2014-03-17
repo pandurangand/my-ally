@@ -64,6 +64,11 @@
             android:label="@string/app_name" 
             android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name="com.dbt.myally.TensionActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

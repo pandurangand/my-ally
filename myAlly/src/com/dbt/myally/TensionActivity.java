@@ -1,0 +1,183 @@
+package com.dbt.myally;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import com.dbt.myally.InfoDb.ActivityEntry;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class TensionActivity extends Activity {
+	private Bundle _info;
+
+	TextView instructions;
+	ImageView main;
+	Handler mHandler = new Handler();
+	TextView countdown;
+	Iterator<bodyPart> it;
+
+	private enum bodyPart {
+		HEAD, SHOULDER, STOMACH, HAND, LEG, FEET
+	};
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_tension);
+		_info = this.getIntent().getExtras();
+
+		final List<bodyPart> bp = new ArrayList<bodyPart>();
+
+		if (_info.getInt("head") == 1)
+			bp.add(bodyPart.HEAD);
+		if (_info.getInt("shoulder") == 1)
+			bp.add(bodyPart.SHOULDER);
+		if (_info.getInt("stomach") == 1)
+			bp.add(bodyPart.STOMACH);
+		if (_info.getInt("hand") == 1)
+			bp.add(bodyPart.HAND);
+		if (_info.getInt("leg") == 1)
+			bp.add(bodyPart.LEG);
+		if (_info.getInt("feet") == 1)
+			bp.add(bodyPart.FEET);
+
+		main = (ImageView) findViewById(R.id.tension_image);
+		instructions = (TextView) findViewById(R.id.tension_instruction);
+		countdown = (TextView) findViewById(R.id.tension_countdown);
+
+		mHandler.postDelayed(new Runnable() {
+			public void run() {
+				instructions.setVisibility(View.INVISIBLE);
+
+				it = bp.iterator();
+				if (it.hasNext())
+					clenchActivity(it.next());
+				else
+					doneScan();
+
+			}
+		}, 3000);
+
+	}
+
+	private void clenchActivity(final bodyPart part) {
+		CountDownTimer timer = null;
+		
+		timer = new CountDownTimer(5100, 1000) {
+			int secondsLeft = 5;
+			int count = 0;
+
+			public void onTick(long millisUntilFinished) {
+				switch (part) {
+				case HEAD:
+					break;
+				case SHOULDER:
+					break;
+				case HAND:
+					main.setImageResource(R.drawable.hand_clenched);
+					countdown.setText("Clench your hands for " + secondsLeft);
+					break;
+				case STOMACH:
+					break;
+				case LEG:
+					break;
+				case FEET:
+					main.setImageResource(R.drawable.feet_clenched);
+					countdown.setText("Clench your feet for " + secondsLeft);
+					break;
+				}
+				secondsLeft--;
+			}
+
+			public void onFinish() {
+				secondsLeft = 5;
+				count++;
+				countdown.setText("Now Relax");
+
+				switch (part) {
+				case HEAD:
+					break;
+				case SHOULDER:
+					break;
+				case HAND:
+					main.setImageResource(R.drawable.hand_unclenched);
+					break;
+				case STOMACH:
+					break;
+				case LEG:
+					break;
+				case FEET:
+					main.setImageResource(R.drawable.feet_unclenched);
+					break;
+				}
+				
+				mHandler.postDelayed(new Runnable() {
+					public void run() {
+						if (count != 3) {
+							start();
+						} else {
+							cancel();
+							dialog(part);
+
+						}
+					}
+				}, 5000);
+
+			}
+		};
+		timer.start();
+		
+		
+		
+	}
+
+	public void dialog(bodyPart part) {
+		final bodyPart p = part;
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Would you like to do that again?")
+				.setCancelable(false)
+				.setPositiveButton("Yes",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								dialog.dismiss();
+								clenchActivity(p);
+							}
+						})
+				.setNegativeButton("No", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						dialog.dismiss();
+						if (it.hasNext())
+							clenchActivity(it.next());
+						else
+							doneScan();
+					}
+				});
+		AlertDialog alert = builder.create();
+		alert.show();
+
+	}
+
+	public void doneScan() {
+		if (_info.containsKey(ActivityEntry.COLUMN_PRE_MOOD)) {
+			Intent intent = new Intent(TensionActivity.this,
+					SubjectiveMeasureActivity.class);
+
+			intent.putExtras(_info);
+			startActivity(intent);
+		} else {
+			setResult(1);
+			finish();
+		}
+	}
+}

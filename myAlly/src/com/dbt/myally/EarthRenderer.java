@@ -35,7 +35,7 @@ public class EarthRenderer extends RajawaliRenderer {
 	private int mAnimDuration = baseDuration;
 	private Quaternion mDragRotation = new Quaternion();
 
-	private final float TOUCH_SCALE_FACTOR = 180f / 10000;
+	private final float TOUCH_SCALE_FACTOR = 180f / 15000;
 
 	public EarthRenderer(Context context) {
 		super(context);
@@ -53,47 +53,56 @@ public class EarthRenderer extends RajawaliRenderer {
 		try {
 
 			float latTor = 43.7f;
-			float longTor = 79.4f;
+			float longTor = -79.4f;
 			float lat = 25.8f;
 			float lon = -80.2f;
 
+			// Toronto, Miami, Vancouver, Seattle, Ottawa, Waterloo, Quebec
+			// City, Berlin, Munich, Paris, Toulouse, Versailles, New York,
+			// Boston, London, Beijing, Hong Kong, Sydney
+			float[] latitudes = { 43.7f, 25.8f, 49.25f, 47.6062f, 45.4215f,
+					43.46f, 46.80f, 52.52f, 48.14f, 48.86f, 43.61f, 48.80f,
+					40.71f, 42.36f, 51.51f, 39.9f, 22.396f, -33.87f };
+			float[] longitudes = { -79.4f, -80.2f, -123f, -122.33f, -75.6972f,
+					-80.52f, -71.24f, 13.41f, 11.58f, 2.352f, 1.44f, 2.13f,
+					-74f, -71.06f, -0.13f, 116.41f, 114.11f, 151.21f };
+			int[] moods = { 0xFFA500, 0xFF0000, 0x32CD32, 0x0000CD, 0x800080,
+					0xFFFF00, 0xFF0000, 0x32CD32, 0x0000CD, 0x0000CD, 0xFFFF00,
+					0xFF0000, 0x32CD32, 0x0000CD, 0x800080, 0xFFFF00, 0xFFA500,
+					0xFFA500 };
 			Material material = new Material();
 			material.addTexture(new Texture("earthColors",
 					R.drawable.earth_texture));
 			material.setColorInfluence(0);
-			circle = new Sphere(0.01f, 7, 7);
-			Material m = new Material();
 
-			circle.setMaterial(m);
-			circle.getMaterial().setColor(0xff33ff33);
+			for (int i = 0; i < latitudes.length; i++) {
+				circle = new Sphere(0.01f, 7, 7);
+				Material m = new Material();
 
-			lat -= 90;
-			float x = (float) (1 * Math.sin(Math.toRadians(lat)) * Math
-					.cos(Math.toRadians(lon)));
-			float z = (float) (-1 * Math.sin(Math.toRadians(lat)) * Math
-					.sin(Math.toRadians(lon)));
-			float y = (float) (1 * Math.cos(Math.toRadians(lat)));
-			circle.setPosition(x, y, z);
+				circle.setMaterial(m);
+				circle.getMaterial().setColor(moods[i]);
+
+				latitudes[i] -= 90;
+				float x = (float) (1 * Math.sin(Math.toRadians(latitudes[i])) * Math
+						.cos(Math.toRadians(longitudes[i])));
+				float z = (float) (-1 * Math.sin(Math.toRadians(latitudes[i])) * Math
+						.sin(Math.toRadians(longitudes[i])));
+				float y = (float) (1 * Math.cos(Math.toRadians(latitudes[i])));
+				circle.setPosition(x, y, z);
+				getCurrentScene().addChild(circle);
+
+			}
 			mSphere = new Sphere(1, 24, 24);
 			mSphere.setMaterial(material);
 			getCurrentScene().addChild(mSphere);
-			getCurrentScene().addChild(circle);
 			;
 		} catch (TextureException e) {
 			e.printStackTrace();
 		}
 
 		getCurrentCamera().setZ(4.2f);
-		Vector3 rotationAxis = new Vector3(.3f, .9f, .15f);
-		rotationAxis.normalize();
 
-		mAnim = new RotateAnimation3D(rotationAxis, 360);
-		mAnim.setDuration(8000);
-		mAnim.setRepeatMode(RepeatMode.INFINITE);
-		mAnim.setTransformable3D(getCurrentCamera());
-
-		registerAnimation(mAnim);
-		mAnim.play();
+		resetAnimation(true);
 	}
 
 	public void down_press() {
@@ -177,11 +186,11 @@ public class EarthRenderer extends RajawaliRenderer {
 		axis = axis.multiply(mat);
 		axis.normalize();
 
-		Vector3 rotationAxis = new Vector3(.3f, .9f, .15f);
+		Vector3 rotationAxis = new Vector3(0f, 1f, 0f);
 		rotationAxis.normalize();
 
 		mAnim = new RotateAnimation3D(rotationAxis, 360);
-		mAnim.setDuration(8000);
+		mAnim.setDuration(36000);
 		mAnim.setRepeatMode(RepeatMode.INFINITE);
 		mAnim.setTransformable3D(getCurrentCamera());
 
