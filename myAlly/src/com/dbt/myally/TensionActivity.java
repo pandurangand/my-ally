@@ -81,7 +81,7 @@ public class TensionActivity extends Activity {
 		balloon.setVisibility(View.VISIBLE);
 		balloon.startAnimation(breathing);
 
-		timer = new CountDownTimer(5100, 1000) {
+		timer = new CountDownTimer(5500, 1000) {
 			int secondsLeft = 5;
 			int count = 0;
 
@@ -98,6 +98,8 @@ public class TensionActivity extends Activity {
 				case STOMACH:
 					break;
 				case LEG:
+					main.setImageResource(R.drawable.leg_clenched);
+					countdown.setText("Clench your leg for " + secondsLeft);
 					break;
 				case FEET:
 					main.setImageResource(R.drawable.feet_clenched);
@@ -123,6 +125,7 @@ public class TensionActivity extends Activity {
 				case STOMACH:
 					break;
 				case LEG:
+					main.setImageResource(R.drawable.leg_unclenched);
 					break;
 				case FEET:
 					main.setImageResource(R.drawable.feet_unclenched);
@@ -140,7 +143,7 @@ public class TensionActivity extends Activity {
 
 						}
 					}
-				}, 5000);
+				}, 5500);
 
 			}
 		};

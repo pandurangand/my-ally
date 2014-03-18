@@ -100,7 +100,7 @@ public class BreathingActivity extends Activity {
 			}
 
 			_breathIn = !_breathIn;
-			_handler.postDelayed(this, 3000);
+			_handler.postDelayed(this, 5500);
 		}
 	};
 
