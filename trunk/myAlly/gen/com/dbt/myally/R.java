@@ -213,19 +213,21 @@ public final class R {
         public static final int heart_on=0x7f02001a;
         public static final int homework=0x7f02001b;
         public static final int ic_launcher=0x7f02001c;
-        public static final int leg_dot_blue=0x7f02001d;
-        public static final int leg_dot_red=0x7f02001e;
-        public static final int line=0x7f02001f;
-        public static final int sad=0x7f020020;
-        public static final int shame=0x7f020021;
-        public static final int shoulder_dot_blue=0x7f020022;
-        public static final int shoulder_dot_red=0x7f020023;
-        public static final int sphere=0x7f020024;
-        public static final int sphere2=0x7f020025;
-        public static final int sphere4=0x7f020026;
-        public static final int sphereblue=0x7f020027;
-        public static final int stomach_dot_blue=0x7f020028;
-        public static final int stomach_dot_red=0x7f020029;
+        public static final int leg_clenched=0x7f02001d;
+        public static final int leg_dot_blue=0x7f02001e;
+        public static final int leg_dot_red=0x7f02001f;
+        public static final int leg_unclenched=0x7f020020;
+        public static final int line=0x7f020021;
+        public static final int sad=0x7f020022;
+        public static final int shame=0x7f020023;
+        public static final int shoulder_dot_blue=0x7f020024;
+        public static final int shoulder_dot_red=0x7f020025;
+        public static final int sphere=0x7f020026;
+        public static final int sphere2=0x7f020027;
+        public static final int sphere4=0x7f020028;
+        public static final int sphereblue=0x7f020029;
+        public static final int stomach_dot_blue=0x7f02002a;
+        public static final int stomach_dot_red=0x7f02002b;
     }
     public static final class id {
         public static final int BottomLinearLayout=0x7f0c0005;

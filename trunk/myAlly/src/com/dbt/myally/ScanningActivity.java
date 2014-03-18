@@ -234,22 +234,27 @@ public class ScanningActivity extends Activity {
 			} else if (count == 2) {
 				shoulder.setImageResource(R.drawable.shoulder_dot_blue);
 				shoulder.setVisibility(View.VISIBLE);
+				head.setOnClickListener(null);
 				instructions.setText("Now examine your shoulders");
 			} else if (count == 3) {
 				stomach.setImageResource(R.drawable.stomach_dot_blue);
 				stomach.setVisibility(View.VISIBLE);
+				shoulder.setOnClickListener(null);
 				instructions.setText("Feel your stomach");
 			} else if (count == 4) {
 				hand.setImageResource(R.drawable.hand_dot_blue);
 				hand.setVisibility(View.VISIBLE);
+				stomach.setOnClickListener(null);
 				instructions.setText("Be conscious of your hands");
 			} else if (count == 5) {
 				leg.setImageResource(R.drawable.leg_dot_blue);
 				leg.setVisibility(View.VISIBLE);
+				hand.setOnClickListener(null);
 				instructions.setText("Examine the length of your legs");
 			} else if (count == 6) {
 				feet.setImageResource(R.drawable.feet_dot_blue);
 				feet.setVisibility(View.VISIBLE);
+				leg.setOnClickListener(null);
 				instructions.setText("And finally, your feet");
 			}
 		}
