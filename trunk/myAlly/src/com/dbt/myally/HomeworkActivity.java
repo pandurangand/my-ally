@@ -17,11 +17,13 @@ public class HomeworkActivity extends Activity {
 		setContentView(R.layout.activity_hmk);
 		String[] homework = new String [] { 
 				"Balloon Breathing",
-				"Body Scan and Tension Relief"
+				"Body Scan and Tension Relief",
+				"Thought Diffusion"
 		};
 		final Class<?>[] activities = new Class [] {
 				BreathingActivity.class,
-				ScanningActivity.class
+				ScanningActivity.class,
+				ThoughtDiffusionActivity.class
 		};
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, homework);

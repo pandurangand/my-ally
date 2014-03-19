@@ -105,8 +105,6 @@ public class BreathingActivity extends Activity {
 	};
 
 	public void doneBreath(View view) {
-		// Intent intent = new Intent(MainActivity.this,
-		// BreathingActivity.class);
 		if (_info != null) {
 			Intent intent = new Intent(BreathingActivity.this,
 					SubjectiveMeasureActivity.class);
