@@ -22,19 +22,22 @@ public class ThoughtDiffusionView extends View {
 
 	private ArrayList<Thought> _thoughts;
 
-	private Thought _activeThought;
+	//Currently touched thought
+	private Thought _activeThought = null;
 
 	private Rect _bounds = new Rect();
 
+	//Random positions and velocities for thoughts
 	private Random _rand = new Random();
 
+	//Used for flings
 	private GestureDetector _detector;
 
 	private Runnable r = new Runnable() {
 		@Override
 		public void run() {
-			update();
-			invalidate(); 
+			update(); //Update locations/speed
+			invalidate();  //Update visuals
 		}
 	};
 
@@ -72,6 +75,7 @@ public class ThoughtDiffusionView extends View {
 			}
 		}
 
+		//Register flings
 		return _detector.onTouchEvent(event);
 	}
 
@@ -84,15 +88,20 @@ public class ThoughtDiffusionView extends View {
 			c.drawText(t.get_thought(), t.get_x(), t.get_y(), _paint);
 		}
 
+		//Delay the next update by FRAME_RATE milliseconds
 		h.postDelayed(r, FRAME_RATE);
 	}
 
+	/**
+	 * Go through all thoughts and update their x and y positions.
+	 */
 	private void update() {
 		ArrayList<Thought> toRemove = new ArrayList<Thought>();
 
 		for(Thought t : _thoughts) {
 			_paint.getTextBounds(t.get_thought(), 0, 1, _bounds);
 
+			//If the thought has been touched, have it bounce back
 			if(t.is_touched()) {
 				if (t.get_x() < 0 && t.get_y() < 0) {
 					t.set_x(0);
@@ -113,6 +122,7 @@ public class ThoughtDiffusionView extends View {
 					}
 				}
 			} else {
+				//Otherwise, have the thought drift away
 				t.translate();
 
 				if (t.get_x() < 0 && t.get_y() < 0) {
@@ -123,12 +133,18 @@ public class ThoughtDiffusionView extends View {
 			}
 		}
 
+		//Remove thoughts that are no longer on the screen
 		if(toRemove.size() > 0) {
 			_thoughts.removeAll(toRemove);
 		}
 
 	}
 
+	/**
+	 * Thought container class. Contains x, y positions and velocities, as well
+	 * as the thought message itself and whether or not the thought has been touched.
+	 *
+	 */
 	private class Thought {
 		private int _x = -1;
 		private int _y = -1;
