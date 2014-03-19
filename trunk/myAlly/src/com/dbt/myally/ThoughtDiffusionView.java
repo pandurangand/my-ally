@@ -111,14 +111,26 @@ public class ThoughtDiffusionView extends View {
 
 					if ((t.get_x() > this.getWidth() - 2*_bounds.width()) || (t.get_x() - 2*_bounds.width() < 0)) {
 						t.invert_x_direction();
-						t.set_touched(false);
 						t.reset_velocity();
+						
+						if(t.get_numBounces() > 5) {
+							t.set_touched(false);
+							t.set_numBounces(0);
+						} else {
+							t.incrementBounces();
+						}
 					}
 
 					if ((t.get_y() > this.getHeight() - _bounds.height()/2) || (t.get_y() - _bounds.height() < 0)) {
 						t.invert_y_direction();
-						t.set_touched(false);
 						t.reset_velocity();
+						
+						if(t.get_numBounces() > 5) {
+							t.set_touched(false);
+							t.set_numBounces(0);
+						} else {
+							t.incrementBounces();
+						}
 					}
 				}
 			} else {
@@ -155,6 +167,8 @@ public class ThoughtDiffusionView extends View {
 		private String _thought;
 
 		private boolean _touched = false;
+		
+		private int _numBounces = 0;
 
 		public Thought(String thought) {
 			_thought = thought;
@@ -162,8 +176,8 @@ public class ThoughtDiffusionView extends View {
 			_x = _rand.nextInt(300) + 100;
 			_y = _rand.nextInt(300) + 100;
 
-			_xVelocity = _rand.nextInt(5) + 1;
-			_yVelocity = _rand.nextInt(5) + 1;	
+			_xVelocity = _rand.nextInt(3) + 1;
+			_yVelocity = _rand.nextInt(3) + 1;	
 		}
 
 		public void reset_velocity() {
@@ -178,6 +192,22 @@ public class ThoughtDiffusionView extends View {
 			} else if (_yVelocity < 0) {
 				_yVelocity = -1;
 			}
+			
+			//_xVelocity /= 2;
+			
+			//_yVelocity /= 2;
+		}
+		
+		public void incrementBounces() {
+			_numBounces++;
+		}
+		
+		public int get_numBounces() {
+			return _numBounces;
+		}
+		
+		public void set_numBounces(int bounces) {
+			_numBounces = bounces;
 		}
 		
 		public void translate() {
