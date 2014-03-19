@@ -32,8 +32,11 @@ public class EarthRenderer extends RajawaliRenderer {
 	private static final int baseDuration = 4000;
 	private static final int minDuration = 1000;
 	private Vector3 mDirection = new Vector3();
+	  private float mCameraDistance = 4.2f; 
+
 	private int mAnimDuration = baseDuration;
 	private Quaternion mDragRotation = new Quaternion();
+	  private float mRecentCameraDistance; 
 
 	private final float TOUCH_SCALE_FACTOR = 180f / 15000;
 
@@ -125,7 +128,7 @@ public class EarthRenderer extends RajawaliRenderer {
 	}
 
 	public void pinchOrDragFinished() {
-		// mCameraDistance = mRecentCameraDistance;
+		mCameraDistance = mRecentCameraDistance;
 		resetAnimation(true);
 		storeRotation();
 	}
@@ -162,7 +165,19 @@ public class EarthRenderer extends RajawaliRenderer {
 		storeRotation();
 
 	}
-
+	public void pinch(float scale) 
+	  { 
+	    // Zooms the view 
+	    
+	    setCameraDistance(scale); 
+	  } 
+	private void setCameraDistance(float scale) 
+	  { 
+	    // Set our camera distance 
+	    
+	    mRecentCameraDistance = mCameraDistance / scale; 
+	    getCurrentCamera().setZ(mRecentCameraDistance);    
+	  } 
 	private void cancelAnimation() {
 		if (mAnim != null) {
 			mAnim.pause();
