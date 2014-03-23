@@ -15,36 +15,40 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class ThoughtDiffusionView extends View {
-	private Handler h;
+	//If true, then thoughts bounce off the edges. Otherwise they reappear on
+	//the other side
+	private final boolean BOUNCE = false;
+	//The number of times the thought should bounce/reappear
+	private final int MAX_BOUNCES = 10;
+	//The FPS of the game
 	private final int FRAME_RATE = 30;
-
+	//Used to start the runnable again at FRAME_RATE milliseconds
+	private Handler _h;
+	//Reusable Paint variable
 	private Paint _paint;
-
+	//Reusable Rect variable
+	private Rect _bounds = new Rect();
+	//Active thoughts
 	private ArrayList<Thought> _thoughts;
-
 	//Currently touched thought
 	private Thought _activeThought = null;
-
-	private Rect _bounds = new Rect();
-
 	//Random positions and velocities for thoughts
 	private Random _rand = new Random();
-
 	//Used for flings
 	private GestureDetector _detector;
 
 	private Runnable r = new Runnable() {
 		@Override
 		public void run() {
-			update(); //Update locations/speed
-			invalidate();  //Update visuals
+			update(); 		//Update locations/speed
+			invalidate();  	//Update visuals
 		}
 	};
 
 	public ThoughtDiffusionView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
-		h = new Handler();
+		_h = new Handler();
 
 		_paint = new Paint();
 		_paint.setColor(Color.BLACK);
@@ -61,17 +65,11 @@ public class ThoughtDiffusionView extends View {
 	public boolean onTouchEvent(MotionEvent event) {		
 		//For each thought
 		for(Thought t : _thoughts) {
-			_paint.getTextBounds(t.get_thought(), 0, 1, _bounds);
-
 			//Check if a thought was touched
-			if((event.getX() >= t.get_x() - _bounds.width() / 2) &&
-					event.getX() <= t.get_x() + _bounds.width() / 2) {
-				if((event.getY() >= t.get_y() - _bounds.height() / 2) &&
-						event.getY() <= t.get_y() + _bounds.height() / 2) {
-					t.set_touched(true);
-					_activeThought = t;
-					break;
-				}
+			if(t.get_bounds().contains((int)event.getX(), (int)event.getY())) {
+				t.set_touched(true);
+				_activeThought = t;
+				break;
 			}
 		}
 
@@ -85,11 +83,16 @@ public class ThoughtDiffusionView extends View {
 
 	protected void onDraw(Canvas c) {
 		for(Thought t : _thoughts) {
+			_paint.getTextBounds(t.get_thought(), 0, t.get_thought().length(), _bounds);
+
+			_paint.setColor(Color.RED);
+			c.drawRect(t.get_bounds(), _paint);
+			_paint.setColor(Color.BLACK);
 			c.drawText(t.get_thought(), t.get_x(), t.get_y(), _paint);
 		}
 
 		//Delay the next update by FRAME_RATE milliseconds
-		h.postDelayed(r, FRAME_RATE);
+		_h.postDelayed(r, FRAME_RATE);
 	}
 
 	/**
@@ -99,49 +102,56 @@ public class ThoughtDiffusionView extends View {
 		ArrayList<Thought> toRemove = new ArrayList<Thought>();
 
 		for(Thought t : _thoughts) {
-			_paint.getTextBounds(t.get_thought(), 0, 1, _bounds);
+			t.translate();
 
-			//If the thought has been touched, have it bounce back
+			//Check if the thought has been touched
 			if(t.is_touched()) {
-				if (t.get_x() < 0 && t.get_y() < 0) {
-					t.set_x(0);
-					t.set_y(0);
-				} else {
-					t.translate();
 
-					if ((t.get_x() > this.getWidth() - 2*_bounds.width()) || (t.get_x() - 2*_bounds.width() < 0)) {
+				if(BOUNCE) {
+					//Bounce it back on x
+					if(t.get_bounds().right >= this.getWidth() || 
+							t.get_bounds().left <= 0) {
 						t.invert_x_direction();
-						t.reset_velocity();
-						
-						if(t.get_numBounces() > 5) {
-							t.set_touched(false);
-							t.set_numBounces(0);
-						} else {
-							t.incrementBounces();
-						}
+						t.incrementBounces();
 					}
 
-					if ((t.get_y() > this.getHeight() - _bounds.height()/2) || (t.get_y() - _bounds.height() < 0)) {
+					//Bounce it back on y
+					if(t.get_bounds().bottom >= this.getHeight() || 
+							t.get_bounds().top <= 0) {
 						t.invert_y_direction();
-						t.reset_velocity();
-						
-						if(t.get_numBounces() > 5) {
-							t.set_touched(false);
-							t.set_numBounces(0);
-						} else {
-							t.incrementBounces();
-						}
+						t.incrementBounces();
+					}
+				} else {
+					if(t.get_bounds().left > this.getWidth()) {
+						t.set_x(0);
+						t.incrementBounces();
+					} else if (t.get_bounds().right < 0) {
+						t.set_x(this.getWidth());
+						t.incrementBounces();
+					}
+					
+					if(t.get_bounds().top > this.getHeight()) {
+						t.set_y(0);
+						t.incrementBounces();
+					} else if (t.get_bounds().bottom < 0) {
+						t.set_y(this.getWidth());
+						t.incrementBounces();
 					}
 				}
 			} else {
-				//Otherwise, have the thought drift away
-				t.translate();
-
-				if (t.get_x() < 0 && t.get_y() < 0) {
+				//Remove it from the list of thoughts when it is off screen
+				if (t.get_bounds().right < 0 && t.get_bounds().bottom < 0) {
 					toRemove.add(t);
-				} else if (t.get_x() > this.getWidth() || t.get_y() - _bounds.height() > this.getHeight()) {
+				} else if (t.get_bounds().top > this.getHeight() || 
+						t.get_bounds().left > this.getWidth()) {
 					toRemove.add(t);
 				}
+			}
+
+			//After a certain amount of bounces, it is no longer "touhced"
+			if(t.get_numBounces() > MAX_BOUNCES) {
+				t.reset_numBounces();
+				t.set_touched(false);
 			}
 		}
 
@@ -167,7 +177,7 @@ public class ThoughtDiffusionView extends View {
 		private String _thought;
 
 		private boolean _touched = false;
-		
+
 		private int _numBounces = 0;
 
 		public Thought(String thought) {
@@ -180,47 +190,41 @@ public class ThoughtDiffusionView extends View {
 			_yVelocity = _rand.nextInt(3) + 1;	
 		}
 
-		public void reset_velocity() {
-			if(_xVelocity > 5) {
-				_xVelocity = 5;
-			} else if (_xVelocity < 0) {
-				_xVelocity = -1;
-			}
-			
-			if(_yVelocity > 5) {
-				_yVelocity = 5;
-			} else if (_yVelocity < 0) {
-				_yVelocity = -1;
-			}
-			
-			//_xVelocity /= 2;
-			
-			//_yVelocity /= 2;
-		}
-		
 		public void incrementBounces() {
 			_numBounces++;
 		}
-		
+
 		public int get_numBounces() {
 			return _numBounces;
 		}
-		
-		public void set_numBounces(int bounces) {
-			_numBounces = bounces;
+
+		public void reset_numBounces() {
+			_numBounces = 0;
 		}
-		
+
 		public void translate() {
 			_x = _x + _xVelocity;
 			_y = _y + _yVelocity;
 		}
 
-		public int get_x() {
-			return _x;
+		public Rect get_bounds() {
+			_paint.getTextBounds(get_thought(), 0, get_thought().length(), 
+					_bounds);
+
+			Rect bounds = new Rect();
+			int fudge_factor = 10;
+			bounds.set(
+					get_x() - _bounds.width() / 2 - fudge_factor, 
+					get_y() - _bounds.height(), 
+					get_x() + _bounds.width() / 2, 
+					get_y() + _bounds.height()/3 - fudge_factor);
+
+
+			return bounds;
 		}
 
-		public void set_x(int _x) {
-			this._x = _x;
+		public int get_x() {
+			return _x;
 		}
 
 		public void set_xVelocity(int _xVelocity) {
@@ -233,6 +237,10 @@ public class ThoughtDiffusionView extends View {
 
 		public int get_y() {
 			return _y;
+		}
+
+		public void set_x(int _x) {
+			this._x = _x;
 		}
 
 		public void set_y(int _y) {
@@ -266,7 +274,8 @@ public class ThoughtDiffusionView extends View {
 			if(_activeThought != null) {
 				_activeThought.set_xVelocity((int) velocityX / 80);
 				_activeThought.set_yVelocity((int) velocityY / 80);
-				
+				_activeThought = null;
+
 				return true;
 			}
 
