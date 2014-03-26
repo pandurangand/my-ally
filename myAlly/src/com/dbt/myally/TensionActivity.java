@@ -88,22 +88,28 @@ public class TensionActivity extends Activity {
 			public void onTick(long millisUntilFinished) {
 				switch (part) {
 				case HEAD:
+					main.setImageResource(R.drawable.head_clenched);
+					countdown.setText("Squeeze your face for " + secondsLeft + "s");
 					break;
 				case SHOULDER:
+					main.setImageResource(R.drawable.shoulder_clenched);
+					countdown.setText("Shrug your shoulders for " + secondsLeft + "s");
 					break;
 				case HAND:
 					main.setImageResource(R.drawable.hand_clenched);
-					countdown.setText("Clench your hands for " + secondsLeft);
+					countdown.setText("Clench your hands for " + secondsLeft + "s");
 					break;
 				case STOMACH:
+					main.setImageResource(R.drawable.stomach_clenched);
+					countdown.setText("Clench your abs for " + secondsLeft + "s");
 					break;
 				case LEG:
 					main.setImageResource(R.drawable.leg_clenched);
-					countdown.setText("Clench your leg for " + secondsLeft);
+					countdown.setText("Clench your leg for " + secondsLeft + "s");
 					break;
 				case FEET:
 					main.setImageResource(R.drawable.feet_clenched);
-					countdown.setText("Clench your feet for " + secondsLeft);
+					countdown.setText("Clench your feet for " + secondsLeft + "s");
 					break;
 				}
 				secondsLeft--;
@@ -116,13 +122,16 @@ public class TensionActivity extends Activity {
 
 				switch (part) {
 				case HEAD:
+					main.setImageResource(R.drawable.head_unclenched);
 					break;
 				case SHOULDER:
+					main.setImageResource(R.drawable.shoulder_unclenched);
 					break;
 				case HAND:
 					main.setImageResource(R.drawable.hand_unclenched);
 					break;
 				case STOMACH:
+					main.setImageResource(R.drawable.stomach_unclenched);
 					break;
 				case LEG:
 					main.setImageResource(R.drawable.leg_unclenched);
