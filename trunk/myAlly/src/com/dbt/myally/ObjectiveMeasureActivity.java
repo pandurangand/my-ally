@@ -114,7 +114,7 @@ public class ObjectiveMeasureActivity extends Activity {
  					}
  				});
  			}
- 		}, 10000);
+ 		}, 12500);
     }
 
     /**
@@ -214,7 +214,7 @@ public class ObjectiveMeasureActivity extends Activity {
 
             long endTime = System.currentTimeMillis();
             double totalTimeInSecs = (endTime - startTime) / 1000d;
-            if (totalTimeInSecs >= 5) {
+            if (totalTimeInSecs >= 6) {
                 double bps = (beats / totalTimeInSecs);
                 int dpm = (int) (bps * 60d);
                 if (dpm < 30 || dpm > 180) {
