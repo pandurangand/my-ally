@@ -18,12 +18,14 @@ public class HomeworkActivity extends Activity {
 		String[] homework = new String [] { 
 				"Balloon Breathing",
 				"Body Scan and Tension Relief",
-				"Thought Diffusion"
+				"Thought Diffusion",
+				"Mind Jar"
 		};
 		final Class<?>[] activities = new Class [] {
 				BreathingActivity.class,
 				ScanningActivity.class,
-				ThoughtDiffusionActivity.class
+				ThoughtDiffusionActivity.class,
+				ParticleActivity.class
 		};
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, homework);
