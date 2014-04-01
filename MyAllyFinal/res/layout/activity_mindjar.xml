@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mind_jar_bkg"
+    android:orientation="vertical" >
+
+        <com.ece1778.myally.dbt.mindjar.MindJarView
+        android:id="@+id/mindjar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:contentDescription="@string/cd_mindjar"
+        android:src="@drawable/mind_jar2" />
+</LinearLayout>
