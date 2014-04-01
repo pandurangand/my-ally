@@ -16,4 +16,16 @@
     
     <!-- Mind Jar Activity -->
     <string name="cd_mindjar">Mind Jar</string>
+    
+    <!-- Diary Card Activity -->
+    <string name="cd_diarycard_bkg">Diary Card Book</string>
+    
+    <string name="cd_anger">Anger Emotion</string>
+    <string name="cd_anxious">Anxious Emotion</string>
+    <string name="cd_fear">Fear Emotion</string>
+    <string name="cd_happy">Happy Emotion</string>
+    <string name="cd_misery">Misery Emotion</string>
+    <string name="cd_sad">Sad Emotion</string>
+    <string name="cd_shame">Shame Emotion</string>
+    
 </resources>
