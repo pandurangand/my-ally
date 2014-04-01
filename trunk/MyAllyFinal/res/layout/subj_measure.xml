@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/generic_bkg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/Instructions"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="20dp"
+        android:paddingTop="60dp"
+        android:text="@string/subj_measure"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/White"
+        android:textStyle="italic" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/anger"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/anger" />
+
+        <ImageButton
+            android:id="@+id/shame"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/shame" />
+
+        <ImageButton
+            android:id="@+id/sadness"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sad" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/happy"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/happy" />
+
+        <ImageButton
+            android:id="@+id/anxious"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/anxious" />
+
+        <ImageButton
+            android:id="@+id/misery"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/misery" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/fear"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/fear" />
+            />
+    </LinearLayout>
+
+</LinearLayout>
