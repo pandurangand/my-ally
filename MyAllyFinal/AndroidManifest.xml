@@ -47,6 +47,12 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
+        
+        <activity
+            android:name="com.ece1778.myally.dbt.diary.DiaryCardActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

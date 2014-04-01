@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/AliceBlue"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:contentDescription="@string/cd_diarycard_bkg"
+        android:src="@drawable/diary_card_bkg" />
+
+    <ImageView
+        android:id="@+id/continueButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="55dp"
+        android:layout_marginRight="40dp"
+        android:contentDescription="@string/cd_continueButton"
+        android:onClick="onContinueClick"
+        android:src="@drawable/continue_button" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="37dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/emotion_anger"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:contentDescription="@string/cd_anger"
+                android:src="@drawable/anger" />
+
+            <SeekBar
+                android:id="@+id/seekBarAnger"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/seekbar_thumb" />
+
+            <TextView
+                android:id="@+id/seekTextAnger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/emotion_anxious"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:contentDescription="@string/cd_anxious"
+                android:src="@drawable/anxious" />
+
+            <SeekBar
+                android:id="@+id/seekBarAnxious"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/seekTextAnxious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/emotion_fear"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:contentDescription="@string/cd_fear"
+                android:src="@drawable/fear" />
+
+            <SeekBar
+                android:id="@+id/seekBarFear"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/seekTextFear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/emotion_happy"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:contentDescription="@string/cd_happy"
+                android:src="@drawable/happy" />
+
+            <SeekBar
+                android:id="@+id/seekBarHappy"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/seekTextHappy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/emotion_misery"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:contentDescription="@string/cd_misery"
+                android:src="@drawable/misery" />
+
+            <SeekBar
+                android:id="@+id/seekBarMisery"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/seekTextMisery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/emotion_sad"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:contentDescription="@string/cd_sad"
+                android:src="@drawable/sad" />
+
+            <SeekBar
+                android:id="@+id/seekBarSad"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/seekTextSad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/emotion_shame"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:contentDescription="@string/cd_shame"
+                android:src="@drawable/shame" />
+
+            <SeekBar
+                android:id="@+id/seekBarShame"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/seekTextShame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
