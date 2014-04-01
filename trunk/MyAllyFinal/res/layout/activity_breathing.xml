@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/generic_bkg"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView_HRInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/hr_desc"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/White"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/textView_HR"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_HRInfo"
+        android:gravity="center"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/White" />
+
+    <ImageView
+        android:id="@+id/balloon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_HR"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:contentDescription="@string/cd_balloon"
+        android:src="@drawable/balloon" />
+
+    <TextView
+        android:id="@+id/textView_breath"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/White" />
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:visible="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp" />
+
+</RelativeLayout>

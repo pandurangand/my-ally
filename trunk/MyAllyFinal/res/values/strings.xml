@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">myAlly</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Thought Diffusion Activity -->
+    <string name="default_thought">My Thought</string>
+    
+    <!-- Breathing Activity -->
+    <string name="hr_desc">Your current heart rate:</string>
+    <string name="cd_balloon">Breathing Balloon</string>
+    
+    <!-- Mind Jar Activity -->
+    <string name="cd_mindjar">Mind Jar</string>
+</resources>
