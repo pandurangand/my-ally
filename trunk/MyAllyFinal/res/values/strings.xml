@@ -18,6 +18,7 @@
     <string name="cd_mindjar">Mind Jar</string>
     
     <!-- Diary Card Activity -->
+    <string name="initial_value">0</string>
     <string name="cd_diarycard_bkg">Diary Card Book</string>
     
     <string name="cd_anger">Anger Emotion</string>
