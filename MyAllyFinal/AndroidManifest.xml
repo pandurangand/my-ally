@@ -29,27 +29,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.ece1778.myally.dbt.thoughtdiffusion.ThoughtDiffusionActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
-        
         <activity
             android:name="com.ece1778.myally.dbt.breathing.BreathingActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
-        
         <activity
             android:name="com.ece1778.myally.dbt.mindjar.MindJarActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
-        
         <activity
             android:name="com.ece1778.myally.dbt.diary.DiaryCardActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ece1778.myally.crisis.SubjectiveMeasureActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ece1778.myally.crisis.ObjectiveMeasureActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>

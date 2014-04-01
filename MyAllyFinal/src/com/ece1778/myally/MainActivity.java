@@ -1,17 +1,17 @@
 package com.ece1778.myally;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.view.Menu;
+import android.widget.ExpandableListView;
+import android.widget.TextSwitcher;
+
+import com.ece1778.myally.database.InfoDbHelper;
 import com.ece1778.myally.ui.NavigationDrawer;
 import com.ece1778.myally.ui.NavigationDrawer.TherapyLauncher;
 import com.ece1778.myally.ui.QuoteSwitcher;
-import com.ece1778.myally.R;
-
-import android.os.Bundle;
-import android.app.Activity;
-import android.content.Intent;
-import android.support.v4.widget.DrawerLayout;
-import android.view.Menu;
-import android.widget.ListView;
-import android.widget.TextSwitcher;
 
 public class MainActivity extends Activity implements TherapyLauncher {
 	//TextSwitcher used to display quotes in View
@@ -24,14 +24,16 @@ public class MainActivity extends Activity implements TherapyLauncher {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		InfoDbHelper db = new InfoDbHelper(this);
+		
 		_quotesSwitcher = new QuoteSwitcher(getApplicationContext(), 
 				(TextSwitcher)findViewById(R.id.FadingQuoteSwitcher), 
 				getResources().getStringArray(R.array.quotes));
 		_quotesSwitcher.init();
 
-		_navigationDrawer = new NavigationDrawer(getApplicationContext(),
+		_navigationDrawer = new NavigationDrawer(this,
 				(DrawerLayout) findViewById(R.id.drawer_layout),
-				(ListView) findViewById(R.id.left_drawer));
+				(ExpandableListView) findViewById(R.id.left_drawer));
 		_navigationDrawer.set_therapyLauncher(this);
 	}
 
