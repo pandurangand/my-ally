@@ -52,8 +52,20 @@
         android:id="@+id/surfaceView"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:visible="false"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp" />
+        android:layout_marginBottom="0dp"
+        android:visible="false" />
+
+    <ImageView
+        android:id="@+id/button1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:contentDescription="@string/cd_continueButton"
+        android:src="@drawable/continue_button" 
+        android:onClick="onContinueClick"/>
 
 </RelativeLayout>

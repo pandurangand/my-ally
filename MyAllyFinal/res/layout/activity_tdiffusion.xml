@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/thought_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" 
     android:background="@drawable/thought_diffusion_bkg"
-    >
+    android:orientation="vertical" >
 
     <EditText
         android:id="@+id/thought_text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:ems="10" 
-        android:inputType="text"
+        android:ems="10"
         android:imeOptions="actionSend"
-        android:textColor="@android:color/white"
-        android:text="@string/default_thought">
+        android:inputType="text"
+        android:text="@string/default_thought"
+        android:textColor="@android:color/white" >
 
         <requestFocus />
     </EditText>
 
-     <com.ece1778.myally.dbt.thoughtdiffusion.ThoughtDiffusionView
-		android:id="@+id/thought_view"   
-		android:layout_height="fill_parent"   
-		android:layout_width="fill_parent"
-		/> 
+    <com.ece1778.myally.dbt.thoughtdiffusion.ThoughtDiffusionView
+        android:id="@+id/thought_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/thought_text" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/button1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:contentDescription="@string/cd_continueButton"
+        android:onClick="onContinueClick"
+        android:src="@drawable/continue_button" />
+
+</RelativeLayout>

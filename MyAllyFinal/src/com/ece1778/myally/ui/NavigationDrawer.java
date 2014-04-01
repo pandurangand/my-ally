@@ -37,17 +37,17 @@ public class NavigationDrawer implements ListView.OnItemClickListener {
 	private TherapyManager _therapyManager;
 	//The names of therapies available in the app
 	ArrayList<String> _therapies;
-	
+
 	public NavigationDrawer(final Context context, 
 			DrawerLayout drawerLayout, ListView drawerList) {
 		_drawerLayout = drawerLayout;
 		_drawerList = drawerList;
-		
+
 		//Create a therapy manager (should probably be a singleton)
 		_therapyManager = new TherapyManager();
 		_therapies = new ArrayList<String>();
 		_therapies.addAll(_therapyManager.get_therapies().keySet());
-		
+
 		//Setup the ListView with data and listen for selections
 		_drawerList.setAdapter(new ArrayAdapter<String>(context, 
 				android.R.layout.simple_list_item_1, _therapies));
@@ -55,18 +55,18 @@ public class NavigationDrawer implements ListView.OnItemClickListener {
 	}
 
 	public void set_therapyLauncher(TherapyLauncher therapyLauncher) {
-		if(_therapyLauncher != null) {
-			_therapyLauncher = therapyLauncher;
-		}
+		_therapyLauncher = therapyLauncher;
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, 
 			long id) {
-		String therapy = _therapies.get(position);
-		
-		Class<?> therapyClass = _therapyManager.get_therapies().get(therapy);
-		_therapyLauncher.onTherapyLaunch(therapyClass);
+		if(_therapyLauncher != null) {
+			String therapy = _therapies.get(position);
+
+			Class<?> therapyClass = _therapyManager.get_therapies().get(therapy);
+			_therapyLauncher.onTherapyLaunch(therapyClass);
+		}
 	}
 
 	public DrawerLayout get_drawerLayout() {

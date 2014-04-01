@@ -187,29 +187,32 @@ public final class R {
     public static final class drawable {
         public static final int balloon=0x7f020000;
         public static final int cloud=0x7f020001;
-        public static final int generic_bkg=0x7f020002;
-        public static final int homescreen_crisis=0x7f020003;
-        public static final int homescreen_diary=0x7f020004;
-        public static final int homescreen_untouched=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int mind_jar2=0x7f020007;
-        public static final int mind_jar_bkg=0x7f020008;
-        public static final int thought_diffusion_bkg=0x7f020009;
+        public static final int continue_arrow=0x7f020002;
+        public static final int continue_button=0x7f020003;
+        public static final int generic_bkg=0x7f020004;
+        public static final int homescreen_crisis=0x7f020005;
+        public static final int homescreen_diary=0x7f020006;
+        public static final int homescreen_untouched=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int mind_jar2=0x7f020009;
+        public static final int mind_jar_bkg=0x7f02000a;
+        public static final int thought_diffusion_bkg=0x7f02000b;
     }
     public static final class id {
-        public static final int FadingQuoteSwitcher=0x7f0b0006;
-        public static final int action_settings=0x7f0b000c;
+        public static final int FadingQuoteSwitcher=0x7f0b0007;
+        public static final int action_settings=0x7f0b000d;
         public static final int balloon=0x7f0b0002;
-        public static final int drawer_layout=0x7f0b0005;
-        public static final int left_drawer=0x7f0b0007;
-        public static final int mindjar=0x7f0b0008;
+        public static final int button1=0x7f0b0005;
+        public static final int drawer_layout=0x7f0b0006;
+        public static final int left_drawer=0x7f0b0008;
+        public static final int mindjar=0x7f0b0009;
         public static final int surfaceView=0x7f0b0004;
         public static final int textView_HR=0x7f0b0001;
         public static final int textView_HRInfo=0x7f0b0000;
         public static final int textView_breath=0x7f0b0003;
-        public static final int thought_layout=0x7f0b0009;
-        public static final int thought_text=0x7f0b000a;
-        public static final int thought_view=0x7f0b000b;
+        public static final int thought_layout=0x7f0b000a;
+        public static final int thought_text=0x7f0b000b;
+        public static final int thought_view=0x7f0b000c;
     }
     public static final class layout {
         public static final int activity_breathing=0x7f030000;
@@ -223,16 +226,19 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f080001;
         public static final int app_name=0x7f080000;
-        public static final int cd_balloon=0x7f080004;
+        public static final int cd_balloon=0x7f080005;
+        /**  Generic 
+         */
+        public static final int cd_continueButton=0x7f080002;
         /**  Mind Jar Activity 
          */
-        public static final int cd_mindjar=0x7f080005;
+        public static final int cd_mindjar=0x7f080006;
         /**  Thought Diffusion Activity 
          */
-        public static final int default_thought=0x7f080002;
+        public static final int default_thought=0x7f080003;
         /**  Breathing Activity 
          */
-        public static final int hr_desc=0x7f080003;
+        public static final int hr_desc=0x7f080004;
     }
     public static final class style {
         /** 

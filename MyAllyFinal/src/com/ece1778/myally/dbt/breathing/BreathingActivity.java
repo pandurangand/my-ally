@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.view.SurfaceView;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -74,6 +75,11 @@ Therapy {
 
 		t.start();
 
+	}
+	
+	@Override
+	public void onContinueClick(View view) {
+		finish();
 	}
 	
 	@Override

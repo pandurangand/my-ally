@@ -6,6 +6,7 @@ import com.ece1778.myally.detectors.ShakeDetector;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
 public class MindJarActivity extends Activity implements Therapy {
 	private ShakeDetector _shakeDetector;
@@ -42,5 +43,10 @@ public class MindJarActivity extends Activity implements Therapy {
 	@Override
 	public String getName() {
 		return "Mind Jar";
+	}
+
+	@Override
+	public void onContinueClick(View view) {
+		finish();		
 	}
 }

@@ -4,6 +4,9 @@
     <string name="app_name">myAlly</string>
     <string name="action_settings">Settings</string>
     
+    <!-- Generic -->
+    <string name="cd_continueButton">Continue Button</string>
+    
     <!-- Thought Diffusion Activity -->
     <string name="default_thought">My Thought</string>
     
