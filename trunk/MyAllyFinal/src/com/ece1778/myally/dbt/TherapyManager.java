@@ -7,6 +7,12 @@ import com.ece1778.myally.dbt.breathing.BreathingActivity;
 import com.ece1778.myally.dbt.mindjar.MindJarActivity;
 import com.ece1778.myally.dbt.thoughtdiffusion.ThoughtDiffusionActivity;
 
+/**
+ * New DBT Activities should be added here.
+ * 
+ * @author Mario
+ *
+ */
 public class TherapyManager {
 	private Map<String, Class<?>> _therapies;
 	
