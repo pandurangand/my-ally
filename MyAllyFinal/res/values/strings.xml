@@ -35,4 +35,8 @@
     <string name="default_text">--</string>
     <string name="obj_instruction">Let\'s measure your heart rate now! Please put your finger on the camera lens</string>
 
+    <string name="cd_alcohol">Alcoholic Urge</string>
+    <string name="cd_selfharm">Self Harm Urge</string>
+    <string name="cd_drug">Drug Use Urge</string>
+    
 </resources>
