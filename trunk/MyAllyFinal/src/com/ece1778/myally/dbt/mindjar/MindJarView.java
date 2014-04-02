@@ -59,7 +59,7 @@ public class MindJarView extends AnimatedView implements ShakeListener {
 		_vParams.put(VelBounds.MIN_Y, -2f);
 		_vParams.put(VelBounds.MIN_Z, -0.5f);
 
-		createSnowflakes(500);
+		createSnowflakes(600);
 	}
 
 	// Return an integer that ranges from min inclusive to max inclusive.
