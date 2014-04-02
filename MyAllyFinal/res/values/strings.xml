@@ -4,6 +4,10 @@
     <string name="app_name">myAlly</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Main Activity -->
+    <string name="cd_crisisButton">Crisis Button</string>
+    <string name="cd_diarycardButton">Diary Card Button</string>
+    
     <!-- Generic -->
     <string name="cd_continueButton">Continue Button</string>
 
