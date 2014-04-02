@@ -25,6 +25,8 @@ public class BodyScanActivity extends Activity {
 	Animation mAnim_head, mAnim_shoulder, mAnim_stomach, mAnim_hand, mAnim_leg,
 			mAnim_feet;
 	TextView instructions;
+	
+	private int TIME = 1500;
 
 	Handler mHandler = new Handler();
 
@@ -51,7 +53,7 @@ public class BodyScanActivity extends Activity {
 				TranslateAnimation.ABSOLUTE, 0f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.08f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.34f);
-		mAnim_head.setDuration(5000);
+		mAnim_head.setDuration(TIME);
 		mAnim_head.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_head.setFillAfter(true);
 
@@ -60,7 +62,7 @@ public class BodyScanActivity extends Activity {
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.34f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.42f);
-		mAnim_shoulder.setDuration(5000);
+		mAnim_shoulder.setDuration(TIME);
 		mAnim_shoulder.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_shoulder.setFillAfter(true);
 
@@ -69,7 +71,7 @@ public class BodyScanActivity extends Activity {
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.42f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.57f);
-		mAnim_stomach.setDuration(5000);
+		mAnim_stomach.setDuration(TIME);
 		mAnim_stomach.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_stomach.setFillAfter(true);
 
@@ -78,7 +80,7 @@ public class BodyScanActivity extends Activity {
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.57f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.65f);
-		mAnim_hand.setDuration(5000);
+		mAnim_hand.setDuration(TIME);
 		mAnim_hand.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_hand.setFillAfter(true);
 
@@ -87,7 +89,7 @@ public class BodyScanActivity extends Activity {
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.65f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.84f);
-		mAnim_leg.setDuration(5000);
+		mAnim_leg.setDuration(TIME);
 		mAnim_leg.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_leg.setFillAfter(true);
 
@@ -96,7 +98,7 @@ public class BodyScanActivity extends Activity {
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.84f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0.91f);
-		mAnim_feet.setDuration(5000);
+		mAnim_feet.setDuration(TIME);
 		mAnim_feet.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_feet.setFillAfter(true);
 
@@ -121,7 +123,7 @@ public class BodyScanActivity extends Activity {
 					public void run() {
 						redline.startAnimation(mAnim_shoulder);
 					}
-				}, 5000);
+				}, TIME);
 				head.setOnClickListener(new OnClickListener() {
 
 					@Override
@@ -139,7 +141,7 @@ public class BodyScanActivity extends Activity {
 					public void run() {
 						redline.startAnimation(mAnim_stomach);
 					}
-				}, 5000);
+				}, TIME);
 
 				shoulder.setOnClickListener(new OnClickListener() {
 
@@ -159,7 +161,7 @@ public class BodyScanActivity extends Activity {
 					public void run() {
 						redline.startAnimation(mAnim_hand);
 					}
-				}, 5000);
+				}, TIME);
 				stomach.setOnClickListener(new OnClickListener() {
 
 					@Override
@@ -178,7 +180,7 @@ public class BodyScanActivity extends Activity {
 					public void run() {
 						redline.startAnimation(mAnim_leg);
 					}
-				}, 5000);
+				}, TIME);
 				hand.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -196,7 +198,7 @@ public class BodyScanActivity extends Activity {
 					public void run() {
 						redline.startAnimation(mAnim_feet);
 					}
-				}, 5000);
+				}, TIME);
 				leg.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -213,7 +215,7 @@ public class BodyScanActivity extends Activity {
 					public void run() {
 						doneScan();
 					}
-				}, 5000);
+				}, TIME);
 				feet.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
