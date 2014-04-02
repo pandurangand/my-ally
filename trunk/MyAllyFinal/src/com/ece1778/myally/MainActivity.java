@@ -2,6 +2,7 @@ package com.ece1778.myally;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
@@ -24,8 +25,15 @@ public class MainActivity extends Activity implements TherapyLauncher {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		InfoDbHelper db = new InfoDbHelper(this);
+		InfoDbHelper idb = new InfoDbHelper(this);
+		SQLiteDatabase db = idb.getWritableDatabase();
 		
+		idb.onCreate(db);
+		
+		String crisis = idb.getCrisis();
+		if (crisis.equals("")) {
+			idb.updateOrAddCrisis("Thought Diffusion");
+		}
 		_quotesSwitcher = new QuoteSwitcher(getApplicationContext(), 
 				(TextSwitcher)findViewById(R.id.FadingQuoteSwitcher), 
 				getResources().getStringArray(R.array.quotes));
