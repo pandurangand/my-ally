@@ -158,7 +158,7 @@ public class MindJarView extends AnimatedView implements ShakeListener {
 			float z = genRandom(_pParams.get(PosBounds.MAX_Z), 
 					_pParams.get(PosBounds.MIN_Z));
 
-			Snowflake s = new Snowflake(x, y, z);
+			Snowflake s = new Snowflake(x,_pParams.get(PosBounds.MAX_Y),z);
 
 			float xV = genRandom(_vParams.get(VelBounds.MAX_X), 
 					_vParams.get(VelBounds.MIN_X));
@@ -167,7 +167,7 @@ public class MindJarView extends AnimatedView implements ShakeListener {
 			float zV = genRandom(_vParams.get(VelBounds.MAX_Z), 
 					_vParams.get(VelBounds.MIN_Z));
 
-			s.setVelocity(xV, yV, zV);
+			s.setVelocity(0, 0, 0);
 
 			_snowflakes.add(s);
 		}

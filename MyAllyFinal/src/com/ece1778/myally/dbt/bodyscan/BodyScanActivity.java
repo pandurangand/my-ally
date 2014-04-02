@@ -2,8 +2,11 @@ package com.ece1778.myally.dbt.bodyscan;
 
 
 import com.ece1778.myally.R;
+import com.ece1778.myally.dbt.musclerelax.MuscleRelaxationActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,7 +26,7 @@ public class BodyScanActivity extends Activity {
 	ImageView redline;
 	ImageView head, shoulder, stomach, hand, leg, feet;
 	Animation mAnim_head, mAnim_shoulder, mAnim_stomach, mAnim_hand, mAnim_leg,
-			mAnim_feet;
+	mAnim_feet;
 	TextView instructions;
 	
 	private int TIME = 1500;
@@ -118,7 +121,7 @@ public class BodyScanActivity extends Activity {
 		public void onAnimationEnd(Animation animation) {
 			if (count == 1) {
 				instructions
-						.setText("Tap the screen if you feel tension in your head");
+				.setText("Tap the screen if you feel tension in your head");
 				mHandler.postDelayed(new Runnable() {
 					public void run() {
 						redline.startAnimation(mAnim_shoulder);
@@ -135,7 +138,7 @@ public class BodyScanActivity extends Activity {
 				});
 			} else if (count == 2) {
 				instructions
-						.setText("Tap the screen if you feel tension in your shoulders");
+				.setText("Tap the screen if you feel tension in your shoulders");
 
 				mHandler.postDelayed(new Runnable() {
 					public void run() {
@@ -155,7 +158,7 @@ public class BodyScanActivity extends Activity {
 				});
 			} else if (count == 3) {
 				instructions
-						.setText("Tap the screen if you feel queasy or uncomfortable in your stomach");
+				.setText("Tap the screen if you feel queasy or uncomfortable in your stomach");
 
 				mHandler.postDelayed(new Runnable() {
 					public void run() {
@@ -174,7 +177,7 @@ public class BodyScanActivity extends Activity {
 				});
 			} else if (count == 4) {
 				instructions
-						.setText("Tap the screen if you feel tension in your hands");
+				.setText("Tap the screen if you feel tension in your hands");
 
 				mHandler.postDelayed(new Runnable() {
 					public void run() {
@@ -192,7 +195,7 @@ public class BodyScanActivity extends Activity {
 				});
 			} else if (count == 5) {
 				instructions
-						.setText("Tap the screen if you feel tension in your legs");
+				.setText("Tap the screen if you feel tension in your legs");
 
 				mHandler.postDelayed(new Runnable() {
 					public void run() {
@@ -210,7 +213,7 @@ public class BodyScanActivity extends Activity {
 				});
 			} else if (count == 6) {
 				instructions
-						.setText("Tap the screen if you feel tension in your feet");
+				.setText("Tap the screen if you feel tension in your feet");
 				mHandler.postDelayed(new Runnable() {
 					public void run() {
 						doneScan();
@@ -235,7 +238,7 @@ public class BodyScanActivity extends Activity {
 				head.setImageResource(R.drawable.head_dot_blue);
 				head.setVisibility(View.VISIBLE);
 				instructions
-						.setText("Start by examining your head for any tension");
+				.setText("Start by examining your head for any tension");
 			} else if (count == 2) {
 				shoulder.setImageResource(R.drawable.shoulder_dot_blue);
 				shoulder.setVisibility(View.VISIBLE);
@@ -267,18 +270,46 @@ public class BodyScanActivity extends Activity {
 		@Override
 		public void onAnimationRepeat(Animation animation) {
 			// TODO Auto-generated method stub
-
 		}
 
 	};
 
+	DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+		@Override
+		public void onClick(DialogInterface dialog, int which) {
+			switch (which){
+			case DialogInterface.BUTTON_POSITIVE:
+				Intent intent = new Intent(BodyScanActivity.this, MuscleRelaxationActivity.class);
+				intent.putExtras(_info);
+				startActivityForResult(intent, 0);				
+				break;
+
+			case DialogInterface.BUTTON_NEGATIVE:
+				//No button clicked
+				finish();
+				break;
+			}
+		}
+	};
+
 	public void doneScan() {
-		//Intent intent = new Intent(ScanningActivity.this, TensionActivity.class);
-		//intent.putExtras(_info);
-		//startActivityForResult(intent, 0);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		//builder.setTitle("Load Entries");
+		builder.setMessage("Would you like to relax your muscles?");
+		builder.setPositiveButton("Yes", dialogClickListener);
+		builder.setNegativeButton("No", dialogClickListener);
+
+		builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				dialog.dismiss();
+			}
+		});
+
+		AlertDialog alert = builder.create();
+		alert.show();
 
 	}
-	
+
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		finish();
 	}
