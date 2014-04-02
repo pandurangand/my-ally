@@ -1,5 +1,8 @@
 package com.ece1778.myally.dbt.diary;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.ece1778.myally.R;
 import com.ece1778.myally.dbt.Therapy;
 
@@ -12,6 +15,8 @@ public class DiaryCardActivity extends FragmentActivity
 implements Therapy {
 	private EmotionFragment _emotionFragment;
 	private UrgeFragment _urgeFragment;
+	private HashMap<Emotion, Integer> _emotionValues = new HashMap<Emotion, Integer>();
+	private HashMap<Urge, Integer> _urgeValues = new HashMap<Urge, Integer>();
 
 
 	@Override
@@ -51,7 +56,7 @@ implements Therapy {
 	public void onContinueClick(View view) {
 		if(view.getId() == R.id.emotionContinue) {
 			// TODO Save Emotions to Database
-			_emotionFragment.getEmotionValues();
+			_emotionValues = _emotionFragment.getEmotionValues();
 
 
 			//Create new fragment and transaction
@@ -70,6 +75,7 @@ implements Therapy {
 			// Commit the transaction
 			transaction.commit();
 		} else if (view.getId() == R.id.urgeContinue) {
+			_urgeValues = _urgeFragment.getUrgeValues();
 			finish();
 		}
 

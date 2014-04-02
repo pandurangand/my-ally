@@ -1,10 +1,10 @@
 package com.ece1778.myally.community;
 
-import com.ece1778.myally.R;
-
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+
+import com.ece1778.myally.R;
 
 public class EarthActivity extends Activity {
 

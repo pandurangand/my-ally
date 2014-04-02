@@ -54,7 +54,7 @@ implements OnSeekBarChangeListener {
 		return inflated;
 	}
 
-	public Map<Emotion, Integer> getEmotionValues() {				
+	public HashMap<Emotion, Integer> getEmotionValues() {				
 		return _values;
 	}
 
