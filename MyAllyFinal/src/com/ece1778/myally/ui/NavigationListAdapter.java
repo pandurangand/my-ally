@@ -88,6 +88,7 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 			button.setImageResource(R.drawable.tire_pressed);
 			_currentCrisisButton = button;
 		} else {
+			//_currentCrisis = therapy;
 			button.setImageResource(R.drawable.tire_unpressed);
 		}
 
@@ -103,8 +104,10 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 					_currentCrisisButton
 							.setImageResource(R.drawable.tire_unpressed);
 					_currentCrisisButton = button;
+					_db.updateOrAddCrisis(therapy);
+					_currentCrisis = _db.getCrisis();
 				}
-				_db.updateOrAddCrisis(therapy);
+				
 				// child.remove(childPosition);
 				// notifyDataSetChanged();
 

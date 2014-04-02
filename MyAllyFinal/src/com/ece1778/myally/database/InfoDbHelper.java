@@ -88,7 +88,7 @@ public class InfoDbHelper extends SQLiteOpenHelper {
 		Cursor cursor = db.query(CrisisEntry.TABLE_NAME, CrisisEntry.COLUMNS,
 				CrisisEntry._ID + " = 1", null, null, null, null, null);
 
-		if (cursor != null) {
+		if (cursor != null && cursor.getCount() > 0) {
 			cursor.moveToFirst();
 			Log.d("database", cursor.getString(0));
 
