@@ -28,7 +28,7 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 	private TherapyLauncher _therapyLauncher;
 	// The therapies available in the app
 	private TherapyManager _therapyManager;
-
+	private InfoDbHelper _db;
 	private static final int COLORS[] = new int[] { 0xFF0099CC, 0xFF9933CC,
 			0xFF669900, 0xFFFF8800, 0xFFCC0000 };
 
@@ -37,6 +37,7 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 		_activity = activity;
 		_dbtCollections = dbtCollections;
 		_therapies = therapies;
+		_db = new InfoDbHelper(_activity.getApplicationContext());
 	}
 
 	public void set_therapyLauncher(TherapyLauncher therapyLauncher) {
@@ -87,9 +88,8 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 				List<String> child = _dbtCollections.get(_therapies
 						.get(groupPosition));
 				
-				InfoDbHelper db = new InfoDbHelper(_activity.getApplicationContext());
 
-				db.updateOrAddCrisis(therapy);
+				_db.updateOrAddCrisis(therapy);
 				//child.remove(childPosition);
 				//notifyDataSetChanged();
 

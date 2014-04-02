@@ -1,12 +1,8 @@
 package com.ece1778.myally.dbt.breathing;
 
-import com.ece1778.myally.R;
-import com.ece1778.myally.dbt.Therapy;
-import com.ece1778.myally.detectors.HeartRateDetector;
-import com.ece1778.myally.detectors.HeartRateDetector.HeartRateListener;
-
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
@@ -16,6 +12,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.ece1778.myally.R;
+import com.ece1778.myally.dbt.Therapy;
+import com.ece1778.myally.detectors.HeartRateDetector;
+import com.ece1778.myally.detectors.HeartRateDetector.HeartRateListener;
 
 public class BreathingActivity extends Activity implements HeartRateListener, 
 Therapy {
@@ -79,7 +80,9 @@ Therapy {
 	
 	@Override
 	public void onContinueClick(View view) {
-		finish();
+		Intent resultIntent = new Intent();
+		this.setResult(2, resultIntent);
+		this.finish();
 	}
 	
 	@Override

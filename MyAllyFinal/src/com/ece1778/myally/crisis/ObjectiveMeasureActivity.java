@@ -24,7 +24,6 @@ import com.ece1778.myally.R;
 import com.ece1778.myally.database.InfoDb.ActivityEntry;
 import com.ece1778.myally.database.InfoDbHelper;
 import com.ece1778.myally.dbt.TherapyManager;
-import com.ece1778.myally.dbt.breathing.BreathingActivity;
 import com.ece1778.myally.util.ImageProcessing;
 
 
@@ -102,6 +101,9 @@ public class ObjectiveMeasureActivity extends Activity {
  					b.putString(ActivityEntry.COLUMN_POST_HR, hr);
  					intent = new Intent(ObjectiveMeasureActivity.this, MainActivity.class);
  	 				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+ 	 				
+ 	 				intent.putExtras(b);
+ 	    			startActivity(intent);
  				} else {
  					b.putString(ActivityEntry.COLUMN_PRE_HR, hr);
  					InfoDbHelper db = new InfoDbHelper(getApplicationContext());
@@ -111,24 +113,32 @@ public class ObjectiveMeasureActivity extends Activity {
  					Class<?> therapyClass = tm.get_therapies()
  							.get(crisisActivity);
  					intent = new Intent(ObjectiveMeasureActivity.this, therapyClass);
- 	 				
+
+ 					intent.putExtras(b);
+ 	    			startActivityForResult(intent, 2);
+
  				}
  				//Intent i = new Intent(ObjectiveMeasureActivity.this, HeartRateMonitor.class);
- 				intent.putExtras(b);
-    			startActivity(intent);
-
-    			// TBD: Verify if needed?
- 				runOnUiThread(new Runnable() {
-
- 					@Override
- 					public void run() {
- 						;
- 					}
- 				});
+ 				
  			}
  		}, 12500);
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+      super.onActivityResult(requestCode, resultCode, data);
+      //switch(requestCode) {
+        //case (MY_CHILD_ACTIVITY) : {
+          if (resultCode == 2) {
+        	  Intent intent = new Intent(ObjectiveMeasureActivity.this,
+  					SubjectiveMeasureActivity.class);
 
+  			intent.putExtras(b);
+  			startActivity(intent);
+          }
+          //break;
+        //} 
+      //}
+    }
     /**
      * {@inheritDoc}
      */
