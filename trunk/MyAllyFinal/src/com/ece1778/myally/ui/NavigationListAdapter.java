@@ -29,6 +29,8 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 	// The therapies available in the app
 	private TherapyManager _therapyManager;
 	private InfoDbHelper _db;
+	private String _currentCrisis;
+	private ImageView _currentCrisisButton;
 	private static final int COLORS[] = new int[] { 0xFF0099CC, 0xFF9933CC,
 			0xFF669900, 0xFFFF8800, 0xFFCC0000 };
 
@@ -38,6 +40,7 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 		_dbtCollections = dbtCollections;
 		_therapies = therapies;
 		_db = new InfoDbHelper(_activity.getApplicationContext());
+		_currentCrisis = _db.getCrisis();
 	}
 
 	public void set_therapyLauncher(TherapyLauncher therapyLauncher) {
@@ -80,6 +83,14 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 
 		final ImageView button = (ImageView) convertView
 				.findViewById(R.id.nav_button);
+
+		if (_currentCrisis.equals(therapy)) {
+			button.setImageResource(R.drawable.tire_pressed);
+			_currentCrisisButton = button;
+		} else {
+			button.setImageResource(R.drawable.tire_unpressed);
+		}
+
 		button.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
@@ -87,11 +98,15 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 				button.setImageResource(R.drawable.tire_pressed);
 				List<String> child = _dbtCollections.get(_therapies
 						.get(groupPosition));
-				
 
+				if (_currentCrisisButton != button) {
+					_currentCrisisButton
+							.setImageResource(R.drawable.tire_unpressed);
+					_currentCrisisButton = button;
+				}
 				_db.updateOrAddCrisis(therapy);
-				//child.remove(childPosition);
-				//notifyDataSetChanged();
+				// child.remove(childPosition);
+				// notifyDataSetChanged();
 
 			}
 		});
