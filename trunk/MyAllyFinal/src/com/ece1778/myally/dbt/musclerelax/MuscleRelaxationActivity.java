@@ -146,7 +146,7 @@ public class MuscleRelaxationActivity extends Activity {
 
 				mHandler.postDelayed(new Runnable() {
 					public void run() {
-						if (count != 3) {
+						if (count != 1) {
 							start();
 						} else {
 							cancel();
