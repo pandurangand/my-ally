@@ -8,15 +8,14 @@ import java.util.Map;
 import android.app.Activity;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.ListView;
 
+import com.ece1778.myally.community.EarthActivity;
 import com.ece1778.myally.crisis.SubjectiveMeasureActivity;
 import com.ece1778.myally.dbt.TherapyManager;
-import com.ece1778.myally.dbt.diary.DiaryCardActivity;
 
 /**
  * The class for the Navigation Drawer accessible from the home screen.
@@ -37,8 +36,6 @@ public class NavigationDrawer implements ListView.OnItemClickListener {
 
 	// The Drawer Layout
 	private DrawerLayout _drawerLayout;
-	// The list UI
-	private ListView _drawerList;
 	// The class responsible for launching DBT therapies
 	private TherapyLauncher _therapyLauncher;
 	// The therapies available in the app
@@ -75,6 +72,8 @@ public class NavigationDrawer implements ListView.OnItemClickListener {
 				String groupName = _groupList.get(groupPosition);
 				if (groupName.equals("Progress")) {
 					_therapyLauncher.onTherapyLaunch(SubjectiveMeasureActivity.class);
+				} else if (groupName.equalsIgnoreCase("community")) {
+					_therapyLauncher.onTherapyLaunch(EarthActivity.class);
 				}
 				return false;
 			}
