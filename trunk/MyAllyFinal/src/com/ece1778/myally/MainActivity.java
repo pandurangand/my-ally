@@ -6,10 +6,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.TextSwitcher;
 
+import com.ece1778.myally.crisis.SubjectiveMeasureActivity;
 import com.ece1778.myally.database.InfoDbHelper;
+import com.ece1778.myally.dbt.diary.DiaryCardActivity;
 import com.ece1778.myally.ui.NavigationDrawer;
 import com.ece1778.myally.ui.NavigationDrawer.TherapyLauncher;
 import com.ece1778.myally.ui.QuoteSwitcher;
@@ -30,10 +33,10 @@ public class MainActivity extends Activity implements TherapyLauncher {
 		
 		idb.onCreate(db);
 		
-		String crisis = idb.getCrisis();
+		/*String crisis = idb.getCrisis();
 		if (crisis.equals("")) {
-			idb.updateOrAddCrisis("Thought Diffusion");
-		}
+			*/idb.updateOrAddCrisis("Thought Diffusion");
+		//}
 		_quotesSwitcher = new QuoteSwitcher(getApplicationContext(), 
 				(TextSwitcher)findViewById(R.id.FadingQuoteSwitcher), 
 				getResources().getStringArray(R.array.quotes));
@@ -56,7 +59,16 @@ public class MainActivity extends Activity implements TherapyLauncher {
 	public void onTherapyLaunch(Class<?> therapy) {
 		Intent intent = new Intent(MainActivity.this, therapy);
 		startActivity(intent);
-
+	}
+	
+	public void onCrisisButtonClicked(View view) {
+		Intent intent = new Intent(MainActivity.this, SubjectiveMeasureActivity.class);
+		startActivity(intent);
+	}
+	
+	public void onDiaryCardClicked(View view) {
+		Intent intent = new Intent(MainActivity.this, DiaryCardActivity.class);
+		startActivity(intent);
 	}
 
 }
