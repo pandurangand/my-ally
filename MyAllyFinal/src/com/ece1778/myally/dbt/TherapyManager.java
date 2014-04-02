@@ -3,9 +3,10 @@ package com.ece1778.myally.dbt;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.ece1778.myally.dbt.bodyscan.BodyScanActivity;
 import com.ece1778.myally.dbt.breathing.BreathingActivity;
-import com.ece1778.myally.dbt.diary.DiaryCardActivity;
 import com.ece1778.myally.dbt.mindjar.MindJarActivity;
+import com.ece1778.myally.dbt.musclerelax.MuscleRelaxationActivity;
 import com.ece1778.myally.dbt.thoughtdiffusion.ThoughtDiffusionActivity;
 
 /**
@@ -23,9 +24,8 @@ public class TherapyManager {
 		_therapies.put("Slow Breathing", BreathingActivity.class);
 		_therapies.put("Thought Diffusion", ThoughtDiffusionActivity.class);
 		_therapies.put("Mind Jar", MindJarActivity.class);
-		
-		//Just Testing
-		_therapies.put("Diary Card", DiaryCardActivity.class);
+		_therapies.put("Body Scan", BodyScanActivity.class);
+		_therapies.put("Muscle Relaxation", MuscleRelaxationActivity.class);
 	}
 
 	public Map<String, Class<?>> get_therapies() {

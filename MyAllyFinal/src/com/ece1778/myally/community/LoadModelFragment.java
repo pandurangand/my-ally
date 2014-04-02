@@ -1,5 +1,7 @@
 package com.ece1778.myally.community;
 
+import com.ece1778.myally.R;
+
 import rajawali.RajawaliFragment;
 import android.annotation.SuppressLint;
 import android.graphics.PointF;
@@ -12,8 +14,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-
-import com.ece1778.myally.R;
 
 @SuppressLint("NewApi")
 public class LoadModelFragment extends RajawaliFragment implements

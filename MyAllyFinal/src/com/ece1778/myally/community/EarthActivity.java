@@ -14,8 +14,6 @@ public class EarthActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_frame);
-        //mSurfaceView.setZOrderMediaOverlay(true);
-			//setGLBackgroundTransparent(true);
 			
         LoadModelFragment fragment = new LoadModelFragment();
 
