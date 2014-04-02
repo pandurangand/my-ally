@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mind_jar_bkg"
+    android:background="@drawable/mind_jar_bkg_2"
     android:orientation="vertical" >
 
     <com.ece1778.myally.dbt.mindjar.MindJarView

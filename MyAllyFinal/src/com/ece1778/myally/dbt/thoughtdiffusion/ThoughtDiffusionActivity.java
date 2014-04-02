@@ -4,6 +4,7 @@ import com.ece1778.myally.R;
 import com.ece1778.myally.dbt.Therapy;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -61,6 +62,8 @@ public class ThoughtDiffusionActivity extends Activity implements Therapy {
 
 	@Override
 	public void onContinueClick(View view) {
+		Intent resultIntent = new Intent();
+		this.setResult(2, resultIntent);
 		finish();
 		
 	}
