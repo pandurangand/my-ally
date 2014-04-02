@@ -41,7 +41,7 @@ public class UrgeFragment extends Fragment implements OnSeekBarChangeListener {
 		return inflated;
 	}
 	
-	public Map<Urge, Integer> getUrgeValues() {				
+	public HashMap<Urge, Integer> getUrgeValues() {				
 		return _values;
 	}
 	

@@ -54,12 +54,12 @@ public class MindJarView extends AnimatedView implements ShakeListener {
 		_paint.setColor(Color.WHITE);
 
 		_pParams = new HashMap<PosBounds, Float>();
-		_pParams.put(PosBounds.MAX_X, 520f);
-		_pParams.put(PosBounds.MAX_Y, 650f);
-		_pParams.put(PosBounds.MAX_Z, 15f);
-		_pParams.put(PosBounds.MIN_X, 195f);
-		_pParams.put(PosBounds.MIN_Y, 380f);
-		_pParams.put(PosBounds.MIN_Z, 0f);
+		_pParams.put(PosBounds.MAX_X, 570f);
+		_pParams.put(PosBounds.MAX_Y, 770f);
+		_pParams.put(PosBounds.MAX_Z, 17f);
+		_pParams.put(PosBounds.MIN_X, 155f);
+		_pParams.put(PosBounds.MIN_Y, 350f);
+		_pParams.put(PosBounds.MIN_Z, 3f);
 
 		_vParams = new HashMap<VelBounds, Float>();
 		_vParams.put(VelBounds.MAX_X, 1f);

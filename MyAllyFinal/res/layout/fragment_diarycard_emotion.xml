@@ -77,7 +77,9 @@
                 android:id="@+id/seekBarAnxious"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/seekbar_thumb" />
 
             <TextView
                 android:id="@+id/seekTextAnxious"
@@ -103,7 +105,9 @@
                 android:id="@+id/seekBarFear"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/seekbar_thumb" />
 
             <TextView
                 android:id="@+id/seekTextFear"
@@ -129,7 +133,9 @@
                 android:id="@+id/seekBarHappy"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/seekbar_thumb" />
 
             <TextView
                 android:id="@+id/seekTextHappy"
@@ -155,7 +161,9 @@
                 android:id="@+id/seekBarMisery"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/seekbar_thumb" />
 
             <TextView
                 android:id="@+id/seekTextMisery"
@@ -181,7 +189,9 @@
                 android:id="@+id/seekBarSad"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/seekbar_thumb" />
 
             <TextView
                 android:id="@+id/seekTextSad"
@@ -207,7 +217,9 @@
                 android:id="@+id/seekBarShame"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/seekbar_thumb" />
 
             <TextView
                 android:id="@+id/seekTextShame"

@@ -14,8 +14,8 @@ import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.ListView;
 
 import com.ece1778.myally.community.EarthActivity;
-import com.ece1778.myally.crisis.SubjectiveMeasureActivity;
 import com.ece1778.myally.dbt.TherapyManager;
+import com.ece1778.myally.progress.ProgressActivity;
 
 /**
  * The class for the Navigation Drawer accessible from the home screen.
@@ -71,7 +71,7 @@ public class NavigationDrawer implements ListView.OnItemClickListener {
 
 				String groupName = _groupList.get(groupPosition);
 				if (groupName.equals("Progress")) {
-					_therapyLauncher.onTherapyLaunch(SubjectiveMeasureActivity.class);
+					_therapyLauncher.onTherapyLaunch(ProgressActivity.class);
 				} else if (groupName.equalsIgnoreCase("community")) {
 					_therapyLauncher.onTherapyLaunch(EarthActivity.class);
 				}
