@@ -11,9 +11,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/default_thought"
         android:imeOptions="actionSend"
-        android:inputType="text"
-        android:text="@string/default_thought"
+        android:inputType="textCapSentences"
         android:textColor="@android:color/white" >
 
         <requestFocus />

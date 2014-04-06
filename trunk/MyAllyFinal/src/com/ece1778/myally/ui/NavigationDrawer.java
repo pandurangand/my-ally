@@ -23,7 +23,7 @@ import com.ece1778.myally.progress.ProgressActivity;
  * @author Mario
  * 
  */
-public class NavigationDrawer implements ListView.OnItemClickListener {
+public class NavigationDrawer {
 	/**
 	 * An interface to launch DBT therapies.
 	 * 
@@ -58,7 +58,7 @@ public class NavigationDrawer implements ListView.OnItemClickListener {
 
 		// Setup the ListView with data and listen for selections
 		final NavigationListAdapter expListAdapter = new NavigationListAdapter(
-				activity, _groupList, _dbtCollection);
+				activity, _groupList, _dbtCollection, _drawerLayout);
 		expListAdapter.set_therapyLauncher((TherapyLauncher) activity);
 		_expListView.setGroupIndicator(null);
 		_expListView.setAdapter(expListAdapter);
@@ -70,6 +70,9 @@ public class NavigationDrawer implements ListView.OnItemClickListener {
 					int groupPosition, long id) {
 
 				String groupName = _groupList.get(groupPosition);
+				if (!groupName.equals("Activities")) {
+					_drawerLayout.closeDrawers();
+				}
 				if (groupName.equals("Progress")) {
 					_therapyLauncher.onTherapyLaunch(ProgressActivity.class);
 				} else if (groupName.equalsIgnoreCase("community")) {
@@ -79,26 +82,13 @@ public class NavigationDrawer implements ListView.OnItemClickListener {
 			}
 
 		});
-		// _drawerList.setAdapter(new ArrayAdapter<String>(context,
-		// android.R.layout.simple_list_item_1, _therapies));
-		// _drawerList.setOnItemClickListener(this);
+
 	}
 
 	public void set_therapyLauncher(TherapyLauncher therapyLauncher) {
 		_therapyLauncher = therapyLauncher;
 	}
 
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position,
-			long id) {
-		if (_therapyLauncher != null) {
-			String therapy = _therapies.get(position);
-
-			Class<?> therapyClass = _therapyManager.get_therapies()
-					.get(therapy);
-			_therapyLauncher.onTherapyLaunch(therapyClass);
-		}
-	}
 
 	public DrawerLayout get_drawerLayout() {
 		return _drawerLayout;

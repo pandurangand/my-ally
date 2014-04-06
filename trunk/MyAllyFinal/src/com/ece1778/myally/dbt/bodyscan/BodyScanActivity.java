@@ -54,8 +54,8 @@ public class BodyScanActivity extends Activity {
 
 		mAnim_head = new TranslateAnimation(TranslateAnimation.ABSOLUTE, 0f,
 				TranslateAnimation.ABSOLUTE, 0f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.08f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.34f);
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.12f,
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.31f);
 		mAnim_head.setDuration(TIME);
 		mAnim_head.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_head.setFillAfter(true);
@@ -63,8 +63,8 @@ public class BodyScanActivity extends Activity {
 		mAnim_shoulder = new TranslateAnimation(
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.34f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.42f);
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.31f,
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.38f);
 		mAnim_shoulder.setDuration(TIME);
 		mAnim_shoulder.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_shoulder.setFillAfter(true);
@@ -72,8 +72,8 @@ public class BodyScanActivity extends Activity {
 		mAnim_stomach = new TranslateAnimation(
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.42f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.57f);
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.38f,
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.55f);
 		mAnim_stomach.setDuration(TIME);
 		mAnim_stomach.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_stomach.setFillAfter(true);
@@ -81,8 +81,8 @@ public class BodyScanActivity extends Activity {
 		mAnim_hand = new TranslateAnimation(
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.57f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.65f);
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.55f,
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.66f);
 		mAnim_hand.setDuration(TIME);
 		mAnim_hand.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_hand.setFillAfter(true);
@@ -90,8 +90,8 @@ public class BodyScanActivity extends Activity {
 		mAnim_leg = new TranslateAnimation(
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.65f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.84f);
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.66f,
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.87f);
 		mAnim_leg.setDuration(TIME);
 		mAnim_leg.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_leg.setFillAfter(true);
@@ -99,8 +99,8 @@ public class BodyScanActivity extends Activity {
 		mAnim_feet = new TranslateAnimation(
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
 				TranslateAnimation.RELATIVE_TO_PARENT, 0f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.84f,
-				TranslateAnimation.RELATIVE_TO_PARENT, 0.91f);
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.87f,
+				TranslateAnimation.RELATIVE_TO_PARENT, 0.93f);
 		mAnim_feet.setDuration(TIME);
 		mAnim_feet.setInterpolator(new AccelerateDecelerateInterpolator());
 		mAnim_feet.setFillAfter(true);

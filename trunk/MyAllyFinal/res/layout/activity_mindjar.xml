@@ -9,8 +9,7 @@
         android:id="@+id/mindjar"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:contentDescription="@string/cd_mindjar"
-        android:src="@drawable/mind_jar2" />
+        android:contentDescription="@string/cd_mindjar"/>
 
     <ImageView
         android:id="@+id/button1"

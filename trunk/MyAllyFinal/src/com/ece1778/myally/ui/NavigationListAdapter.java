@@ -6,6 +6,7 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -31,16 +32,18 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 	private InfoDbHelper _db;
 	private String _currentCrisis;
 	private ImageView _currentCrisisButton;
+	private DrawerLayout _drawerLayout;
 	private static final int COLORS[] = new int[] { 0xFF0099CC, 0xFF9933CC,
 			0xFF669900, 0xFFFF8800, 0xFFCC0000 };
 
 	public NavigationListAdapter(Activity activity, List<String> therapies,
-			Map<String, List<String>> dbtCollections) {
+			Map<String, List<String>> dbtCollections, DrawerLayout drawerLayout) {
 		_activity = activity;
 		_dbtCollections = dbtCollections;
 		_therapies = therapies;
 		_db = new InfoDbHelper(_activity.getApplicationContext());
 		_currentCrisis = _db.getCrisis();
+		_drawerLayout = drawerLayout;
 	}
 
 	public void set_therapyLauncher(TherapyLauncher therapyLauncher) {
@@ -71,6 +74,7 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 			@Override
 			public void onClick(View v) {
 				if (_therapyLauncher != null) {
+					_drawerLayout.closeDrawers();
 					_therapyManager = new TherapyManager();
 
 					Class<?> therapyClass = _therapyManager.get_therapies()
@@ -88,7 +92,7 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 			button.setImageResource(R.drawable.tire_pressed);
 			_currentCrisisButton = button;
 		} else {
-			//_currentCrisis = therapy;
+			// _currentCrisis = therapy;
 			button.setImageResource(R.drawable.tire_unpressed);
 		}
 
@@ -107,7 +111,7 @@ public class NavigationListAdapter extends BaseExpandableListAdapter {
 					_db.updateOrAddCrisis(therapy);
 					_currentCrisis = _db.getCrisis();
 				}
-				
+
 				// child.remove(childPosition);
 				// notifyDataSetChanged();
 
